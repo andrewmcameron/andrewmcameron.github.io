@@ -83,7 +83,6 @@ rm(list = objects[grepl("2019|202|2021|joined|file", objects)])
 # Vector of site dfs for use in for loops
 all_sites <- c("bland_all", "smith_all", "serc_all")
 
-```
 
 # -- Same as previous chunk, for GRASSLANDS
 folders_g <- list.files(paste0(getwd(), "/NEON"))
@@ -155,7 +154,6 @@ all_sites_g <- c("kona_all", "kans_all", "konz_all")
   
   ### Richness & Diversity by Plot-Year
   
-  ```{r Forest Rich_Div, message=FALSE}
 ### Species richness 
 richness <- list()
 

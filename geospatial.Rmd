@@ -183,6 +183,8 @@ A signigicant part of my time working as an intern with the City of Newport News
 After applying a variety of analyses and visualizations to the data, I settled on the four maps below as the most effective means of communicating patterns of gun crime in the city.
 These maps were used in a presentation to city officials and community leaders in the fall of 2023.
 
+I found the hot streets analysis especially insightful. Using the gun crime point layer combined with our city's street centerline layer, I was able to identify the streets with the highest density of gun crime incidents by aggregating each point to the nearest street. The result? Of nearly 10,000 street segments that comprise Newport News’ road network fully *80%* of gun crime incidents during the period 2018-2022 occurred on just over 9% of those segments. More than a quarter of all incidents took place on fewer than 1% of all segments. This analysis really helped to highlight the spatial concentration of gun crime incidents in the city, and to identify areas where the city's resources might be most effectively deployed
+
 Click on a layout below to see it as a high resolution pdf.
 
 ::: row
@@ -216,7 +218,7 @@ For this analysis, completed as my final project for landscape ecology (ENVS 591
 
 ```{r, warning=FALSE, message = FALSE, echo = FALSE}
 library(dplyr)
-library(mapview)
+
 source("other/le_script.R")
 
 # Bring together primary point layers for each study area
@@ -240,11 +242,17 @@ plots$studyarea <- factor(plots$studyarea,
                           as.character(unique(plots$studyarea)))
 
 
-plots.sf <- st_as_sf(plots, crs = 4326, coords = c("decimalLongitude", "decimalLatitude"))
+plots.sf <- sf::st_as_sf(plots, crs = 4326, coords = c("decimalLongitude", "decimalLatitude"))
 
-mapview(plots.sf, zcol = "studyarea", 
+mapview::mapview(plots.sf, zcol = "studyarea", 
         layer.name = "NEON Study Areas", 
-        map.types="OpenStreetMap")
+        map.types="OpenStreetMap",
+        width = 300,
+        height = 200)
+
+plots %>%
+  group_by(studyarea) %>%
+  summarize(x = n())
 
 ```
 
