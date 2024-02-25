@@ -1,0 +1,13 @@
+name: "andrew m cameron"
+navbar:
+  left:
+    - text: "home"
+      href: index.html
+    - text: "geospatial analysis"
+      href: geospatial.html
+    - text: "coding"
+      href: coding.html
+    - text: "web apps"
+      href: webapps.html
+    - text: "about me"
+      href: aboutme.html
