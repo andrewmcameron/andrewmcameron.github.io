@@ -178,7 +178,7 @@ margin-bottom: -15px;
 ### aggregating gun crime incidents to reveal spatial patterns
 :::
 
-A signigicant part of my time working as an intern with the City of Newport News GIS team involved wrangling, geocoding, mapping, and analyzing five years worth of gun crime data as part of the city's Gun Violence Intervention Program.
+A significant part of my time working as an intern with the City of Newport News GIS team involved wrangling, geocoding, mapping, and analyzing five years worth of gun crime data as part of the city's Gun Violence Intervention Program.
 
 After applying a variety of analyses and visualizations to the data, I settled on the four maps below as the most effective means of communicating patterns of gun crime in the city.
 These maps were used in a presentation to city officials and community leaders in the fall of 2023.
@@ -213,7 +213,9 @@ Click on a layout below to see it as a high resolution pdf.
 ### class-level landscape metrics as predictors of avian species richness
 :::
 
-For this analysis, completed as my final project for landscape ecology (ENVS 591) during the fall of 2023 at VCU, I was interested in exploring the extent to which class-level landscape metrics differ in their ability to explain variation in avian species richness (total # of different species) in grassland ecosystems versus forest ecosystems. This project gave me a chance to work with data sets from the National Ecology Observatory Network (NEON), a comprehensive ecological monitoring program that collects standardized, high-quality data from diverse ecosystems across the United States. Check out the map below - which I made using the `mapview` package in R -  to see the NEON sites used in my analysis.
+For this analysis, completed as my final project for landscape ecology (ENVS 591) during the fall of 2023 at VCU, I was interested in exploring the extent to which class-level landscape metrics differ in their ability to explain variation in avian species richness (total # of different species) in grassland ecosystems versus forest ecosystems. This entire analysis was carried out in R, and was a great opportunity to learn how to conduct a spatial analysis outside of a point-and-click GIS environment. It also allowed me to really get familiar with a number of great spatial R packages, including `mapview`, `terra`, `sf`, `raster`, `FedData`, and `landscapemetrics`.
+
+This project gave me a chance to work with data sets from the National Ecology Observatory Network (NEON), a comprehensive ecological monitoring program that collects standardized, high-quality data from diverse ecosystems across the United States. Check out the map below - which I made using the `mapview` package in R -  to see the NEON sites used in my analysis.
 
 
 ```{r, warning=FALSE, message = FALSE, echo = FALSE}
@@ -244,17 +246,24 @@ plots$studyarea <- factor(plots$studyarea,
 
 plots.sf <- sf::st_as_sf(plots, crs = 4326, coords = c("decimalLongitude", "decimalLatitude"))
 
-mapview::mapview(plots.sf, zcol = "studyarea", 
-        layer.name = "NEON Study Areas", 
-        map.types="OpenStreetMap",
-        width = 300,
-        height = 200)
+labels_df <- data.frame(
+  studyarea = c("GRASSLAND SITES", "FOREST SITES"),
+  decimalLongitude = c(-96.49, -79),
+  decimalLatitude = c(40, 36.68)     
+)
 
-plots %>%
-  group_by(studyarea) %>%
-  summarize(x = n())
+# Convert to sf object
+labels_sf <- sf::st_as_sf(labels_df, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
+
+# Create the map with plots and add the labels as another layer
+mapview::mapview(plots.sf, zcol = "studyarea", 
+                        layer.name = "NEON Study Areas", 
+                        map.types = "OpenStreetMap",
+                        width = 300,
+                        height = 200) 
+
 
 ```
 
 <br>
-My analysis used three years of data (2019-2021) from three separate study areas in each of the two landscape types. Each study area comprised
+My analysis used three years of data (2019-2021) from three separate study areas in each of the two landscape types. Study areas comprised 10-20 distinct study plots, with each 'plot-year' combination representing a unique sampling event (n=228). For each plot-year combination, I calculated the total number of bird species observed. I pulled in National Land Cover Data using `FedData` and generated buffers around each plot-year at 200m, 500m, 1000m, and 2000m in order to assess the influence of landscape metrics at different spatial scales. I then used the `landscapemetrics` package to calculate 5 different class-level landscape metrics for each buffer.
