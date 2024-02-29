@@ -53,9 +53,9 @@ h2 {
 <hr>
 
 <div class="text">
-  Hey there. I'm Andrew and I'm glad you've found your way to my website! I love GIS, maps, working with data, and birds.
+  Hey there. I'm Andrew, and I'm glad you've found your way to my website! I'm a former Spanish teacher who made a hard pivot to the world of environmental GIS. I am fascinated by all things geospatial, maps, working with data, and birds.
   
-  Look around and explore some examples of recent projects I've done related to GIS, data analysis, and data visualization. Reach out if you have any questions!
+  Look around and explore some examples of recent projects I've done. Reach out if you have any questions!
 
 </div>
 
