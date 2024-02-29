@@ -425,6 +425,6 @@ With variables selected, I applied a generalized linear mixed model approach to 
 * In grasslands, both PLAND at 1000m and AI at 1000m were found to be significant predictors.
 * A significantly higher amount of variation in avian species richness was explained by grassland model (42.6%) than forest models (<12%).
 
-Here's a <b>[PDF version of a presentation](portfolio/le.final.pdf)</b> I gave where you can take a more detailed look at some of the results.
+Here's a <b>[PDF version of a presentation](portfolio/le_final.pdf)</b> I gave where you can take a more detailed look at some of the results.
 </div>
 
