@@ -61,11 +61,6 @@ h3 {
 }
 </style>
 ```
-<br>
-<div class="text">
-The projects below were all carried out using some combination of ArcGIS Pro and R.
-The R language and RStudio interface have become essential parts of my GIS workflows - particularly when it comes to data exploration, wrangling, and manipulation.
-</div>
 
 <hr>
 
@@ -80,7 +75,7 @@ The R language and RStudio interface have become essential parts of my GIS workf
 :::
 
 <div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
-  <a href="portfolio/colima_presentation.pdf">
+  <a href="portfolio/Colima_presentation.pdf">
     <img src="media/colima_header.png" 
          style="width:675px; 
                 box-shadow: -4px -4px 10px rgba(0,0,0,0.2);">
@@ -88,13 +83,14 @@ The R language and RStudio interface have become essential parts of my GIS workf
 </div>
 
 <div class="text2">
-[Colima Warbler](https://www.audubon.org/field-guide/bird/colima-warbler) (*Leiothlypis crissalis*) is a migratory songbird whose habitat preference is limited to the rugged, mountainous terrain of Mexico's Sierra Madre Occidental and the Chisos Mountains of Big Bend National Park, Texas.
+[Colima Warbler](https://www.audubon.org/field-guide/bird/colima-warbler) (*Leiothlypis crissalis*) is a migratory songbird whose breeding habitat is limited to parts of the rugged, mountainous terrain of Mexico's Sierra Madre Occidental and the Chisos Mountains of Big Bend National Park.
 Range maps for this species tend to significantly overstate its extant distribution within the United States.
 To get a sense of species' 'official' range, check out the map I created below, based on the distributions recognized by the United States Geological Survey and BirdLife International.
 
-Breeding birds inhabit areas dominated by oak, pinyon, juniper, and Arizona cypress, and demonstrate a clear preference for elevations above 1,500 m, with individuals most frequently observed at elevations ≥ 1,800 m.
+Breeding birds have been shown to inhabit areas dominated by oak, pinyon, juniper, and Arizona cypress, and demonstrate a clear preference for elevations above 1,500 m, with individuals most frequently observed at elevations ≥ 1,800 m.
 They employ a ground-nesting strategy and prefers steep (≥35°), north-facing slopes, and sites that are shaded from direct sunlight for 70% of daylight hours.
-I used these attributes to derive a model of probable species distribution within United States that radically reduces the area of likely occurrence as compared with the official USGS species range polygon. The project primarily involved raster analysis: deriving slope and aspect from digital elevation models, extracting raster cells based on specified attributes and mask polygons, reclassifying cells to standardized values, and overlaying raster layers to aggregate the values of their cells.
+
+I used these attributes to derive a model of probable species distribution within the US that radically reduces the area of likely occurrence as compared with the official USGS species range polygon. The project primarily involved raster analysis: deriving slope and aspect from digital elevation models, extracting raster cells based on specified attributes and mask polygons, reclassifying cells to standardized values, and overlaying raster layers to calculte the sum of their cells.
 </div>
 ::: {style="overflow: hidden;"}
 <!-- Ensures the container wraps around floated elements -->
@@ -113,10 +109,10 @@ I used these attributes to derive a model of probable species distribution withi
 
 </figure>
 <div class="text2">
-The final model reduced the area of likely occurrence by 98.24% as compared with official United States Geological Survey species range polygon.
+The final model reduced the area of likely occurrence by *98.24%* as compared with official United States Geological Survey species range polygon.
 The results not only highlight the disparities between traditional range maps and the reality of species distribution but also underscored the potential for geospatial analyses to enhance our understanding of species habitats, contributing to more effective conservation strategies.
 
-For a detailed discussion of data sources, methods, and results, <b><a href="portfolio/colima_report.pdf" target="_blank" rel="noopener noreferrer">read the full report</a></b>.
+For a detailed discussion of data sources, methods, and results, <b><a href="portfolio/colima_report.pdf" target="_blank" rel="noopener noreferrer">read my full report</a></b>.
 Or check out this <b>[PDF version](porfolio/colima_presentation)</b> of a presentation I gave.
 </div>
 :::
@@ -129,7 +125,7 @@ Or check out this <b>[PDF version](porfolio/colima_presentation)</b> of a presen
 
 <figcaption style="font-size: .82em;">
 
-<br> <i>Colima Warbler range based on BirdLife International’s species range map.</i>
+<br> <i>Colima Warbler range based on BirdLife International’s species range map. </i>
 
 </figcaption>
 
@@ -145,7 +141,7 @@ Or check out this <b>[PDF version](porfolio/colima_presentation)</b> of a presen
 
 <i>Extent of all reported COWA observations within the United States across all years.
 Data obtained from eBird and iNaturalist.
-Points do not represent precise latitude and longitude coordinates of observed bird, and in many cases may only be accurate to a resolution of \~1km.</i>
+Inset map reflects model extent within existing USGS range polygon.</i>
 
 </figcaption>
 
@@ -153,6 +149,66 @@ Points do not represent precise latitude and longitude coordinates of observed b
 :::
 :::
 
+<br>
+
+<hr>
+
+<br><br> <!-- NEW SECTION -->
+
+::: {style="text-align: center;"}
+## urban gun crime
+
+### aggregating gun crime incidents to reveal spatial patterns
+:::
+<div class="text2">
+A significant part of my time working as an intern with the City of Newport News GIS team involved processing, geocoding, mapping, and analyzing five years (2018-2022) worth of gun crime data as part of the city's Gun Violence Intervention Program.
+
+Given the size and complexity of the gun crime data received from the Newport News Police Department, a lot of wrangling was required to prepare the data to be mapped and analyzed. Because this project was carried out with the intention of being able to re-run the analysis in the future with new data, I developed a [script in R](linktoscript) to streamline the data preprocessing tasks.
+This automation not only streamlined the initial data preparation but also ensured the project's adaptability and longevity.
+Once prepared, I utilized ArcGIS Pro for geocoding, mapping, and subsequent analysis.
+
+A variety of analyses and visualization techniques were employed to better understand the spatial patterns underlying gun crime in the city, each of which were presented to city officials, decision makers and community leaders in the fall of 2023.
+
+-   **Bivariate Choropleth** (Population Density vs. Incident Rate): This map combines two key variables—population density and gun crime incident rate—into a single visualization.
+    By doing so, it indicates how the frequency of gun crimes correlates with the concentration of people across different areas.
+
+-   **Hotspots**: This visualization identifies geographical areas with significantly higher occurrences of gun crimes by aggregating points into hexagonal bins 1,000 ft. across.
+
+-   **Hot Streets**: Similar to the hotspots map but more specific.
+    This map pinpoints street segments with high frequencies of gun crime.
+
+-   **Victim Binning**: This map displays the spatial distribution of gun crime victims, with victims aggregated into 1,000 x 1,000 foot cells.
+    It focuses exclusively on individuals directly affected by gun crime incidents, explicitly excluding victim categories such as 'Business' and 'Government' from the analysis.
+    I employed a threshold to enhance clarity and focus, where only cells containing two or more victims are visualized.
+
+<b>Click on a layout below to see it as a high resolution pdf.</b>
+
+::: row
+::: column
+<a href="portfolio/gvip_bivariate.pdf" target="_blank"> <img src="media/bivariate.png" alt="bivariate, pop density vs incident rate"/> </a>
+:::
+
+::: column
+<a href="portfolio/gvip_hotspots.pdf" target="_blank"> <img src="media/guncrime_hotspots.png" alt="hotspots"/> </a>
+:::
+
+::: column
+<a href="portfolio/gvip_hotstreets.pdf" target="_blank"> <img src="media/guncrime_hotstreets.png" alt="hot streets"/> </a>
+:::
+
+::: column
+<a href="portfolio/gvip_victimAgg.pdf" target="_blank"> <img src="media/guncrime_victims.png" alt="victim binning"/> </a>
+:::
+:::
+
+I found the hot streets analysis especially insightful.
+By combining the derived gun crime point layer with the city's street centerline layer, I was able to identify street segments with the highest density of gun crime incidents by assigning each point to the nearest feature.
+
+The result?
+Of nearly 10,000 street segments that comprise Newport News’ road network fully *80%* of gun crime incidents occurred on just over 9% of those segments.
+More than a quarter of all incidents took place on fewer than 1% of all segments.
+This analysis helped to highlight the spatial concentration of gun crime incidents in the city, and to identify areas where the city's resources might be most effectively deployed
+</div>
 <br>
 
 <hr>
@@ -244,67 +300,6 @@ margin-bottom: -15px;
 </iframe>
 :::
 
-<br>
-
-<hr>
-
-<br><br> <!-- NEW SECTION -->
-
-::: {style="text-align: center;"}
-## urban gun crime
-
-### aggregating gun crime incidents to reveal spatial patterns
-:::
-<div class="text2">
-A significant part of my time working as an intern with the City of Newport News GIS team involved wrangling, geocoding, mapping, and analyzing five years worth of gun crime data as part of the city's Gun Violence Intervention Program.
-
-Given the size and complexity of the gun crime data received from the Newport News Police Department, a significant amount of wrangling was required to prepare the data to be mapped and analyzed.
-Additionally, this project was carried out with the intention of being able to re-run the analysis in the future as more data become available.
-To facilitate this, I developed a [script in R](linktoscript) to streamline the data preprocessing tasks.
-This automation not only facilitated the initial analysis but also ensured the project's adaptability and longevity.
-Following the data preparation, I utilized ArcGIS Pro for geocoding, mapping, and further analysis, setting a foundation for dynamic and ongoing exploration of gun crime patterns.
-
-A variety of analyses and visualization techniques were employed to better understand the spatial patterns underlying gun crime in the city, each of which were presented to city officials, decision makers and community leaders in the fall of 2023.
-
--   **Bivariate Choropleth** (Population Density vs. Incident Rate): This map combines two key variables—population density and gun crime incident rate—into a single visualization.
-    By doing so, it indicates how the frequency of gun crimes correlates with the concentration of people across different areas.
-
--   **Hotspots**: This visualization identifies geographical areas with significantly higher occurrences of gun crimes by aggregating points into hexagonal bins 1,000 ft. across.
-
--   **Hot Streets**: Similar to the hotspots map but more specific.
-    This map pinpoints street segments with high frequencies of gun crime.
-
--   **Victim Binning**: This map displays the spatial distribution of gun crime victims, with victims aggregated into 1,000 x 1,000 foot cells.
-    It focuses exclusively on individuals directly affected by gun crime incidents, explicitly excluding victim categories such as 'Business' and 'Government' from the analysis.
-    I employed a threshold to enhance clarity and focus, where only cells containing two or more victims are visualized.
-
-<b>Click on a layout below to see it as a high resolution pdf.</b>
-
-::: row
-::: column
-<a href="portfolio/gvip_bivariate.pdf" target="_blank"> <img src="media/bivariate.png" alt="bivariate, pop density vs incident rate"/> </a>
-:::
-
-::: column
-<a href="portfolio/gvip_hotspots.pdf" target="_blank"> <img src="media/guncrime_hotspots.png" alt="hotspots"/> </a>
-:::
-
-::: column
-<a href="portfolio/gvip_hotstreets.pdf" target="_blank"> <img src="media/guncrime_hotstreets.png" alt="hot streets"/> </a>
-:::
-
-::: column
-<a href="portfolio/gvip_victimAgg.pdf" target="_blank"> <img src="media/guncrime_victims.png" alt="victim binning"/> </a>
-:::
-:::
-
-I found the hot streets analysis especially insightful.
-Using the gun crime point layer combined with our city's street centerline layer, I was able to identify the streets with the highest density of gun crime incidents by aggregating each point to the nearest street.
-The result?
-Of nearly 10,000 street segments that comprise Newport News’ road network fully *80%* of gun crime incidents during the period 2018-2022 occurred on just over 9% of those segments.
-More than a quarter of all incidents took place on fewer than 1% of all segments.
-This analysis really helped to highlight the spatial concentration of gun crime incidents in the city, and to identify areas where the city's resources might be most effectively deployed
-</div>
 <br>
 
 <hr>
