@@ -1,0 +1,74 @@
+---
+title:  
+output: 
+  html_document:
+    includes:
+      in_header: header.html
+---
+```{=html}
+<style>
+h1 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 70px;
+    letter-spacing: 10px; 
+    text-align:center;
+}
+
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 320;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 1.7px; 
+    text-align:center;
+}
+
+.text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 24px
+      letter-spacing: 1.15px;
+      text-align:center;
+      }
+      
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+</style>
+```
+<h1>
+  andrew cameron
+</h1>
+
+ <img src="media/me_jujuy.JPG" alt="That's me" class="center" style="width: 500px;"> 
+ 
+ <br>
+
+## geospatial analyst | data wrangler | R enthusiast
+<hr>
+
+<div class="text">
+  Hey there. I'm Andrew and I'm glad you've found your way to my website! I love GIS, maps, working with data, and birds.
+  
+  Look around and explore some examples of recent projects I've done related to GIS, data analysis, and data visualization. Reach out if you have any questions!
+
+</div>
+
+<!-- social links -->
+<div style="text-align: center;">
+  <a href="https://github.com/andrewmcameron" target="_blank">
+    <img src="media/logos/github-mark.png" alt="GitHub" style="width: 30px; margin-right: 11px;">
+  </a>
+  <a href="https://linkedin.com/in/andrew-m-cameron" target="_blank">
+    <img src="media/logos/linkedin.png" alt="LinkedIn" style="width: 30px; margin-left: 11px;">
+  </a>
+    <a href="mailto:andrewmanningcameron@gmail.com" target="_blank">
+    <img src="media/logos/email.png" alt=Ggmail" style="width: 34px; margin-left: 22px;">
+  </a>
+</div>
+

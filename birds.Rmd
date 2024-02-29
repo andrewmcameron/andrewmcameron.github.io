@@ -1,0 +1,23 @@
+---
+title: "birds & birding"
+output: html_document
+---
+```{=html}
+<style>
+h1 {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+}
+</style>
+```
+<hr>
+
+web map of places i have birded
+  - color coded by number of checklists
+  - grouping at smaller scales
+  - size by number of species
+
+bird photos
+
+shiny app
+
