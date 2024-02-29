@@ -3,9 +3,13 @@ title: "coding"
 ---
 ```{=html}
 <style>
-h1 {
-    font-family: 'Caveat', cursive;
+h1.title {
+    font-family: 'Kanit', sans-serif;
     font-weight: 600;
+    font-style: normal;
+    font-size: 62px;
+    letter-spacing: 8px; 
+    text-align:center;
 }
 </style>
 ```
