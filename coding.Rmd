@@ -1,5 +1,12 @@
 ---
 title: "coding"
+output: 
+  html_document:
+    includes:
+      in_header: header.html
+    toc: TRUE
+    toc_depth: 2
+    toc_float: true
 ---
 ```{=html}
 <style>
@@ -13,4 +20,3 @@ h1.title {
 }
 </style>
 ```
-<hr>

@@ -258,46 +258,49 @@ Research on migratory songbirds has demonstrated that occupying inadequate winte
 Working to ensure access to high marsh throughout the entirety of the species’ range is therefore critical.
 
 Generating the HSI required integrating vector and raster data from multiple sources, including the U.S.
-Geological Survey (USGS), eBird (Cornell Lab of Ornithology), the Protected Area Database (PAD), and the National Land Cover Database (NLCD).
-
-I created the map below as part of an <a href="https://storymaps.arcgis.com/stories/6c8f3008185b43e89590d5e1939c2379" target="_blank" rel="noopener noreferrer"><b>ArcGIS Story Map</b></a>.
-It represents observations of Saltmarsh Sparrow during the breeding and non-breeding seasons since 2012.
-I pulled observation data into R using the eBird API, filtered by year and month, and brought the data into ArcGIS Pro to publish as a feature layer.
-
-To read the full project report, including a more detailed discussion of analysis methods, <a href="portfolio/finalpaper.pdf" target="_blank" rel="noopener noreferrer"><b>click here</b></a>.
+Geological Survey (USGS), eBird (Cornell Lab of Ornithology), the Protected Area Database (PAD), and the National Land Cover Database (NLCD). To read the full project report, including a more detailed discussion of analysis methods, <a href="portfolio/finalpaper.pdf" target="_blank" rel="noopener noreferrer"><b>click here</b></a>.
 </div>
+
+I created the map below as part of an <a href="https://storymaps.arcgis.com/stories/6c8f3008185b43e89590d5e1939c2379" target="_blank" rel="noopener noreferrer"><b>ArcGIS Story Map</b></a>. It is here embedded as an ArcGIS Instant App. You can also <a href="https://experience.arcgis.com/experience/6dc5922b5abe47ee94fcc056b982d4cf" target="blank">click here</a> to view in full screen as an ArcGIS Experience.
+
+The map represents observations of Saltmarsh Sparrow during the breeding and non-breeding seasons since 2012.
+I pulled observation data into R using the eBird API, filtered by year and month, and brought the data into ArcGIS Pro to publish as a feature layer. You can click on the map to view it in full screen
+
 
 ```{=html}
 <style>
 .embed-container {
-position: relative; 
-margin: 0 auto; 
-padding-bottom: 67%; 
-height: 0; 
-max-width: 75%;
-} 
+  position: relative;
+  width: 100%; /* Adjusted from max-width to width and set to 100% */
+  padding-bottom: 56.25%; /* This is a common aspect ratio for responsive iframes (16:9). Adjust as necessary for your content */
+  height: 0;
+}
 
-.embed-container iframe, 
-.embed-container object, 
-.embed-container iframe{
-position: absolute; 
-top: 0; left: 0; 
-width: 100%; 
-height: 100%;
-} 
+.embed-container iframe,
+.embed-container object,
+.embed-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-small{
-position: absolute; 
-z-index: 40; 
-bottom: 0; 
-margin-bottom: -15px;
+small {
+  position: absolute;
+  z-index: 40;
+  bottom: 0;
+  margin-bottom: -15px;
 }
 </style>
+
 ```
 ::: embed-container
-<iframe width="300" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Breeding and overwintering Saltmarsh Sparrow distribution since 2002" src="//vcu.maps.arcgis.com/apps/Embed/index.html?webmap=142964f95f854741a62acb2fac494402&amp;extent=-93.9365,33.0611,-61.4829,46.7376&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;legend=true&amp;disable_scroll=false&amp;theme=light">
 
+<iframe src="https://vcu.maps.arcgis.com/apps/instant/basic/index.html?appid=1031f531f57d4b7aa40f6aca05bce18e" width=" 650" height="500" frameborder="0" style="border:0" allowfullscreen>
 </iframe>
+
+
+
 :::
 
 <br>
@@ -374,7 +377,7 @@ mapview::mapview(
   zcol = "studyarea", 
   cex = 3.5,
   layer.name = "Forest Study Sites", 
-  map.types = "OpenStreetMap", 
+  map.types = "CartoDB.Positron", 
   col.regions = c("#ED6A5E", "#E9D985", "#007991")
 )
 ```
@@ -388,7 +391,7 @@ mapview::mapview(
   zcol = "studyarea", 
   cex = 3.5,
   layer.name = "Grassland Study Sites", 
-  map.types = "OpenStreetMap",
+  map.types = "CartoDB.Positron",
   col.regions = c("blue3", "salmon2", "aquamarine3")
   )
 
