@@ -5,7 +5,7 @@ navbar:
       href: index.html
     - text: "geospatial"
       href: geospatial.html
-    - text: "coding"
+    - text: "coding & analysis"
       href: coding.html
     - text: "resume"
       href: resume.html

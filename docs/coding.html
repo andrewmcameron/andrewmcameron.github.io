@@ -11,9 +11,9 @@
 
 
 
-<title>coding</title>
+<title>coding &amp; analysis</title>
 
-<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -343,7 +343,7 @@ div.tocify {
   <a href="geospatial.html">geospatial</a>
 </li>
 <li>
-  <a href="coding.html">coding</a>
+  <a href="coding.html">coding &amp; analysis</a>
 </li>
 <li>
   <a href="resume.html">resume</a>
@@ -363,7 +363,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">coding</h1>
+<h1 class="title toc-ignore">coding &amp; analysis</h1>
 
 </div>
 
@@ -377,7 +377,109 @@ h1.title {
     letter-spacing: 8px; 
     text-align:center;
 }
+
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h3 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 380;
+    font-style: normal;
+}
+
+.text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 24px
+      letter-spacing: 1.15px;
+      text-align:center;
+      }
+      
+.text2 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 24px
+      letter-spacing: 1.15px;
+      }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap */
+  justify-content: center; /* Centers items horizontally, adjust as needed */
+}
+
+.column {
+  flex: 1; /* Adjust this to control how columns grow */
+  max-width: 45%; /* Maximum width of each column */
+  padding: 5px;
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
 </style>
+<hr>
+R is where it’s at. Since being introduced to R and RStudio, they have
+become essential components of many (if not most) of my computer-based
+workflows. From geospatial projects and data analysis, to data
+visualizations and producing documents and reports, R is an incredibly
+powerful tool. Here are some examples of ways I have used R to conduct
+my own analysis, provide research support, assist colleagues, and for my
+own pet projects.
+<hr>
+<p><br></p>
+<div id="data-preprocessing-automation" class="section level2"
+style="text-align: center;">
+<h2>data preprocessing automation</h2>
+</div>
+<p>The
+<a href="https://andrewmcameron.github.io/geospatial.html#urban_gun_crime">urban
+gun crime work</a> that I did during my time as a member of the City of
+Newport News GIS team gave me the chance to carry out some interesting
+spatial analyses and work on developing several apps from the Esri tool
+kit, including Experience Builder, Dashboard, and Map Viewer (none of
+which are public-facing, unfortunately). But in order to get to that
+point, the data generated from the police department’s record management
+query first needed substantial massaging and preparation.</p>
+<p>Because the analyses are expected to be re-run and the dashboard
+updated on an annual or semi-annual basis to reflect new data, I
+developed a script to automate the task otherwise laborious task of
+preprocessing the raw RMS query outputs. I wrote the script as a heavily
+annoated .Rmd file so that whoever has to interact with it can view it
+‘visual’ mode in RStudio and utilize it effectively with effectively no
+knowledge of R required. The user needs only to define two variables - a
+new folder name and the path of the Excel workbook file containing the
+raw data. The script takes care of the rest. The end result are two CSV
+files ready to be brought into ArcGIs Pro and geocoded.</p>
+You can check out a knitted HTML version of the script that I developed
+<b><a href="portfolio/Script1_InitialDataProcessing.html" target="blank">by
+clicking here</a></b>.
+<hr>
+<p><br></p>
+<div id="modelling-algal-blooms" class="section level2"
+style="text-align: center;">
+<h2>modelling algal blooms</h2>
+</div>
+<hr>
+<p><br></p>
+<div id="visualizing-water-temperature-over-time" class="section level2"
+style="text-align: center;">
+<h2>visualizing water temperature over time</h2>
+</div>
+<hr>
+<p><br></p>
+<div id="intro-to-osmdata" class="section level2"
+style="text-align: center;">
+<h2>intro to <code>osmdata</code></h2>
+</div>
+<hr>
+<p><br></p>
+<div id="bringing-fire-data-to-heel" class="section level2"
+style="text-align: center;">
+<h2>bringing fire data to heel</h2>
+</div>
+<hr>
+<p><br></p>
 
 
 

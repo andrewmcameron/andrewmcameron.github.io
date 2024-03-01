@@ -63,7 +63,8 @@ h3 {
 ```
 
 <hr>
-
+These are some examples of my GIS-based projects. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and to a lesser degree Python/ArcPy. 
+<hr>
 <br>
 
 ::: {style="text-align: center;"}
@@ -163,11 +164,11 @@ Inset map reflects model extent within existing USGS range polygon.</i>
 <div class="text2">
 A significant part of my time working as an intern with the City of Newport News GIS team involved processing, geocoding, mapping, and analyzing five years (2018-2022) worth of gun crime data as part of the city's Gun Violence Intervention Program.
 
-Given the size and complexity of the gun crime data received from the Newport News Police Department, a lot of wrangling was required to prepare the data to be mapped and analyzed. Because this project was carried out with the intention of being able to re-run the analysis in the future with new data, I developed a [script in R](linktoscript) to streamline the data preprocessing tasks.
-This automation not only streamlined the initial data preparation but also ensured the project's adaptability and longevity.
+Given the size and complexity of the data sets received from the Newport News Police Department, a good bit of wrangling was required to prepare them to be mapped and analyzed. Because this project was carried out with the intention of being able to re-run the analysis in the future with new data, I developed a [script in R](linktoscript) to streamline the data preprocessing tasks.
+This automation not only facilitated the initial data preparation but also ensured the project's adaptability and longevity.
 Once prepared, I utilized ArcGIS Pro for geocoding, mapping, and subsequent analysis.
 
-A variety of analyses and visualization techniques were employed to better understand the spatial patterns underlying gun crime in the city, each of which were presented to city officials, decision makers and community leaders in the fall of 2023.
+I employed a variety of analyses and visualization techniques to better understand the spatial patterns underlying gun crime in the city, each of which were used in a presentation to city officials, decision makers and community leaders in the fall of 2023.
 
 -   **Bivariate Choropleth** (Population Density vs. Incident Rate): This map combines two key variables—population density and gun crime incident rate—into a single visualization.
     By doing so, it indicates how the frequency of gun crimes correlates with the concentration of people across different areas.
@@ -205,7 +206,7 @@ I found the hot streets analysis especially insightful.
 By combining the derived gun crime point layer with the city's street centerline layer, I was able to identify street segments with the highest density of gun crime incidents by assigning each point to the nearest feature.
 
 The result?
-Of nearly 10,000 street segments that comprise Newport News’ road network fully *80%* of gun crime incidents occurred on just over 9% of those segments.
+Of nearly 10,000 street segments that comprise Newport News’ road network fully *80%* of incidents occurred on just over 9% of those segments.
 More than a quarter of all incidents took place on fewer than 1% of all segments.
 This analysis helped to highlight the spatial concentration of gun crime incidents in the city, and to identify areas where the city's resources might be most effectively deployed
 </div>
