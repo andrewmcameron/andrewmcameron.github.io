@@ -82,7 +82,7 @@ Here are some examples of ways I have used R to conduct my own analysis, provide
 
 I've been fortunate to be able to provide water quality research assistance to the <a href="https://blogs.vcu.edu/pabukaveckas/" target="blank">Bukaveckas Lab</a> at Virginia Commonwealth University, in the form of program scripting, data analysis, and data visualization, since December of 2023.
 
-Among other projects, I developed a script to facilitate the longitudinal monitoring and analysis of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/">chlorophyll a (CHLa) levels in the James River</a>.
+Among other projects, I developed a script to facilitate the longitudinal analysis and modeling of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/">chlorophyll a (CHLa) levels in the James River</a> using multiple linear and nonlinear approaches.
 
 The knitted HTML output contains tables with summary statistics for the all years in the data set; regression statistics for all years combined, as well as individual years, by model; model plots with best fit line; model-specific time series plots; and time series plots for CHLa and dissolved organic nitrogen.
 
@@ -107,7 +107,7 @@ More detailed program documenation is available <a href="https://github.com/andr
 
 Another fun and challenging project I was able to do for the Bukaveckas Lab involved combining 15 years of water quality monitoring data to generate daily mean summary statistics for select variables, as well as produce an animated plot depicting seasonal patterns and inter-annual variation in water temperature at VCU's Rice River Center monitoring station. 
 
-This required quite a bit of wrangling and problem solving to get from A to B. I made extensive use of nested list structures to organize and manage the data, which allowed me to systematically separate and categorize data by year and tab within each Excel workboo. This  was critical given the inconsistency in the data schema and variable naming conventions over the 15 years that data were collected.
+This required quite a bit of wrangling and problem solving to get from A to B. I made extensive use of nested list structures to organize and manage the data, which allowed me to systematically separate and categorize data by year and tab within each Excel workbook. This  was critical given the inconsistency in the data schema and variable naming conventions over the 15 years that data were collected.
 
 I was already familiar with R's `ggplot2` before beginning this project, but the need for a dynamic plot gave me the chance to explore the `gganimate` package - something I look forward to doing more of in the future!
 
@@ -124,7 +124,7 @@ I was already familiar with R's `ggplot2` before beginning this project, but the
 
 ::: row
 <div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
-  <img src="media/gunmap.png" alt="model predictive success" height="410" 
+  <img src="media/gunmap.png" alt="model predictive success" width="750" 
   style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);">
 </div>
 :::
