@@ -44,7 +44,7 @@ h2 {
 <h1>
   andrew cameron
 </h1>
-
+<br>
  <img src="media/me_jujuy.JPG" alt="That's me" class="center" style="width: 500px;"> 
  
  <br>

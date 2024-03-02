@@ -8,6 +8,7 @@ output:
     toc_depth: 2
     toc_float: true
 ---
+
 ```{=html}
 <style>
 h1.title {
@@ -60,48 +61,100 @@ h3 {
 }
 </style>
 ```
+<hr>
+
+R is where it's at.
+Since being introduced to R and RStudio, they have become essential components of many (if not most) of my computer-based workflows.
+From geospatial projects and data analysis, to data visualizations and producing documents and reports, R is an incredibly powerful tool.
+Here are some examples of ways I have used R to conduct my own analysis, provide research support, assist colleagues, and for my own pet projects. You can also check out the source code for each project as a knitted R Markdown file. 
 
 <hr>
-R is where it's at. Since being introduced to R and RStudio, they have become essential components of many (if not most) of my computer-based workflows. From geospatial projects and data analysis, to data visualizations and producing documents and reports, R is an incredibly powerful tool. Here are some examples of ways I have used R to conduct my own analysis, provide research support, assist colleagues, and for my own pet projects.
-<hr>
+
 <br>
 
 ::: {style="text-align: center;"}
-## data preprocessing automation
+## modelling estuarine algal blooms
 :::
 
-The <a href="https://andrewmcameron.github.io/geospatial.html#urban_gun_crime">urban gun crime work</a> that I did during my time as a member of the City of Newport News GIS team gave me the chance to carry out some interesting spatial analyses and work on developing several apps from the Esri tool kit, including Experience Builder, Dashboard, and Map Viewer (none of which are public-facing, unfortunately). But in order to get to that point, the data generated from the police department's record management query first needed substantial massaging and preparation. 
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+<a href="media/chla_modelsuccess.png" target="blank"><img src="media/chla_modelsuccess.png" alt="model predictive success" width="600" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a>
+</div>
 
-Because the analyses are expected to be re-run and the dashboard updated on an annual or semi-annual basis to reflect new data, I developed a script to automate the task otherwise laborious task of preprocessing the raw RMS query outputs. I wrote the script as a heavily annoated .Rmd file so that whoever has to interact with it can view it 'visual' mode in RStudio and utilize it effectively with effectively no knowledge of R required. The user needs only to define two variables - a new folder name and the path of the Excel workbook file containing the raw data. The script takes care of the rest. The end result are two CSV files ready to be brought into ArcGIs Pro and geocoded.
+I've been fortunate to be able to provide water quality research assistance to the <a href="https://blogs.vcu.edu/pabukaveckas/" target="blank">Bukaveckas Lab</a> at Virginia Commonwealth University, in the form of program scripting, data analysis, and data visualization, since December of 2023.
 
-You can check out a knitted HTML version of the script that I developed <b><a href="portfolio/Script1_InitialDataProcessing.html" target="blank">by clicking here</a></b>.
+Among other projects, I developed a script to facilitate the longitudinal monitoring and analysis of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/">chlorophyll a (CHLa) levels in the James River</a>.
+
+The knitted HTML output contains tables with summary statistics for the all years in the data set; regression statistics for all years combined, as well as individual years, by model; model plots with best fit line; model-specific time series plots; and time series plots for CHLa and dissolved organic nitrogen.
+
+The script is designed to dynamically adapt to changes in the dataset, accommodating new data from subsequent years without requiring manual updates to its structure or content.
+
+More detailed program documenation is available <a href="https://github.com/andrewmcameron/modelling-algalBlooms/blob/main/README.md">on my Githib page</a>.
+
+-   <b><a href="portfolio/chla_script_noEval.html" target="blank">source code</a></b>
+
 <hr>
-<br>
 
-::: {style="text-align: center;"}
-## modelling algal blooms
-:::
-
-<hr>
 <br>
 
 ::: {style="text-align: center;"}
 ## visualizing water temperature over time
 :::
 
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+<a href="media/animatedplot.gif" target="blank"><img src="media/animatedplot.gif" alt="model predictive success" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a>
+</div>
+
+
+Another fun and challenging project I was able to do for the Bukaveckas Lab involved combining 15 years of water quality monitoring data to generate daily mean summary statistics for select variables, as well as produce an animated plot depicting seasonal patterns and inter-annual variation in water temperature at VCU's Rice River Center monitoring station. 
+
+This required quite a bit of wrangling and problem solving to get from A to B. I made extensive use of nested list structures to organize and manage the data, which allowed me to systematically separate and categorize data by year and tab within each Excel workboo. This  was critical given the inconsistency in the data schema and variable naming conventions over the 15 years that data were collected.
+
+I was already familiar with R's `ggplot2` before beginning this project, but the need for a dynamic plot gave me the chance to explore the `gganimate` package - something I look forward to doing more of in the future!
+
+- <b><a href="portfolio/james_longterm.html" target="blank">data wrangling source code</a></b>
+- <b><a href="portfolio/animatedplot.html" target="blank">animated plot source code</a></b>
+
 <hr>
+
 <br>
+
+::: {style="text-align: center;"}
+## gun data preprocessing automation
+:::
+
+::: row
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+  <img src="media/gunmap.png" alt="model predictive success" height="410" 
+  style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);">
+</div>
+:::
+
+
+The <a href="https://andrewmcameron.github.io/geospatial.html#urban_gun_crime">urban gun crime work</a> that I did during my time as a member of the City of Newport News GIS team gave me the chance to carry out some interesting spatial analyses and work on developing several apps with the Esri tool kit, including Experience Builder, Dashboards, and web maps (none of which are public-facing, unfortunately).
+But in order to get to that point, the data generated from the police department's record management system query first needed substantial massaging and preparation.
+
+To accommodate the need for re-running analyses and updating the dashboard annually or semi-annually with new data, I developed a script to automate the otherwise laborious task of preprocessing the raw RMS query outputs.
+I wrote the script in a heavily annotated R Markdown file, so that future users can easily interact with it using RStudio's 'visual' mode and execute the code with little to no knowledge of R required.
+The user needs only to define two variables: a new folder name and the path of the Excel workbook file containing the raw data.
+The script takes care of the rest.
+The end result is two CSV files ready to be brought into ArcGIS Pro and geocoded.
+
+- <b><a href="portfolio/Script1_InitialDataProcessing.html" target="blank">source code</a></b>
+
+<hr>
+
+<br>
+
 
 ::: {style="text-align: center;"}
 ## intro to `osmdata`
 :::
 
-<hr>
-<br>
+This was less a coding project and more a way to help folks in my office use some basic coding to programmatically access the <a href="https://www.openstreetmap.org/#map=11/42.1759/-71.4407" target="blank">OpenStreetMap</a> database. 
 
-::: {style="text-align: center;"}
-## bringing fire data to heel
-:::
+Newport News, VA has an amazing <a href-="https://geohub.nnva.gov/" target="blank">Geohub site</a>, but - for obvious reasons - the city does not maintain spatial data layers on *every* feature that exists in the city. After a colleague shared in a meeting that she had had to quickly put together a suitability analysis using features that she pulled in from multiple sources around the web - e.g., shopping, grocery stores, cinemas,  bowling alleys, and sundry other sites for leisure activities - it occurred to me that the GIS team could benefit from being able to leverage the OpenStreetMap API in this sort of situation, should it arise again in the future. 
 
-<hr>
-<br>
+I created a tutorial, adapting from this <a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html" target="blank">excellent and more comphrensive vignette</a></b> on the CRAN website, for using R's `osmdata` package. It is written with the goal that someone who had never used R or RStudio before would nevertheless be able to access the API, pull in the data they are looking for, and export it as a JSON that they can pull into the ArcGIS Pro environment for use in mapping and analysis. 
+
+-  <b><a href="osmdata_tutorial.html" target="blank">`osmdata` tutorial</a></b> 
+
