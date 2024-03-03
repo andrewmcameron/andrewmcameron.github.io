@@ -156,5 +156,5 @@ Newport News, VA has an amazing <a href-="https://geohub.nnva.gov/" target="blan
 
 I created a tutorial, adapting from this <a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html" target="blank">excellent and more comphrensive vignette</a></b> on the CRAN website, for using R's `osmdata` package. It is written with the goal that someone who had never used R or RStudio before would nevertheless be able to access the API, pull in the data they are looking for, and export it as a JSON that they can pull into the ArcGIS Pro environment for use in mapping and analysis. 
 
--  <b><a href="osmdata_tutorial.html" target="blank">`osmdata` tutorial</a></b> 
+-  <b><a href="OSMdata_tutorial.html" target="blank">`osmdata` tutorial</a></b> 
 

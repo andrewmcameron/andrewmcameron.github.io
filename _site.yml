@@ -8,7 +8,7 @@ navbar:
     - text: "coding & analysis"
       href: coding.html
     - text: "resume"
-      href: resume.html
+      href: resume_beta.html
     - text: "about me"
       href: aboutme.html
 

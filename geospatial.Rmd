@@ -151,7 +151,6 @@ Inset map reflects model extent within existing USGS range polygon.</i>
 :::
 
 <br>
-
 <hr>
 
 <br><br> <!-- NEW SECTION -->
@@ -299,8 +298,6 @@ small {
 
 <iframe src="https://vcu.maps.arcgis.com/apps/instant/basic/index.html?appid=1031f531f57d4b7aa40f6aca05bce18e" width=" 650" height="500" frameborder="0" style="border:0" allowfullscreen>
 </iframe>
-
-
 
 :::
 
