@@ -63,7 +63,7 @@ h3 {
 ```
 
 <hr>
-These are some examples of my GIS-based projects. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and to a lesser degree Python/ArcPy. 
+Below are some examples of my GIS work. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and to a lesser degree Python/ArcPy. 
 <hr>
 <br>
 

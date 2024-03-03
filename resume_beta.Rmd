@@ -11,10 +11,7 @@ output:
 ---
 ```{=html}
 <style>
-  .image-container {
-    margin-top: -5px !important; /* Adjust this value as needed */
-  }
-    
+
 h1 {
     font-family: 'Kanit', sans-serif;
     font-weight: 400 !important;
@@ -52,7 +49,7 @@ Aside
 
 
 <div class="image-container">
-  <img src="media/moi.jpg" alt="my photo" style="width:80%;">
+  <img src="media/amc_logo_white.png" alt="my photo" style="width:80% box-shadow:-4px -4px 10px rgba(0,0,0,0.2);">
 </div>
 
 
