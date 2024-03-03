@@ -9,6 +9,7 @@ navbar:
       href: coding.html
     - text: "resume"
       href: resume_beta.html
+      target: "_blank"
     - text: "about me"
       href: aboutme.html
 
