@@ -32,7 +32,7 @@ body {
   text-align: left;
 }
 
-.text {
+.sidetext {
       font-family: 'Roboto', sans-serif;
       font-weight: 400;
       font-size: 11px;
@@ -52,13 +52,13 @@ Aside
 
 
 <div class="image-container">
-  <img src="media/moi.jpg" alt="my photo" style="width:80%;">
+  <img src="media/logos/circle_logo.png" alt="logo" style="width:100%;">
 </div>
 
 
 Contact Info {#contact}
 --------------------------------------------------------------------------------
-<div class="text">
+<div class="sidetext">
 - <i class="fa fa-envelope"></i> cameronam2@vcu.edu
 - <i class="fa fa-github"></i> [github.com/andrewmcameron](https://github.com/andrewmcameron)
 - <i class="fa fa-linkedin"></i> [linkedin.com/andrew-m-cameron](https://www.linkedin.com/in/andrew-m-cameron/)
@@ -118,9 +118,9 @@ Newport News, Virginia
 present - May 2023
 
 ::: concise
-- Programmatic scripting for GIS data preparation and analysis. 
-- Implementing ArcGIS Tools for spatial solutions.
-- Collaboration on data accuracy and GIS problem-solving.
+- Programmatic scripting for GIS data preparation and analysis 
+- Implementing ArcGIS Tools for spatial solutions
+- Collaboration on data accuracy and GIS problem-solving
 :::
 
 ### Graduate Research Geospatial Analyst
@@ -132,8 +132,8 @@ Richmond, Virginia
 present - Jan 2024
 
 ::: concise
-- Working to enhance urban agriculture site selection, sustainability, and equity. 
-- Preparation of technical project summaries.
+- Working to enhance urban agriculture site selection, sustainability, and equity 
+- Preparation of technical project summaries
 - GIS data sourcing and acquisition
 - GIS data innovation and spatial analysis 
 :::
@@ -148,9 +148,9 @@ present - Dec 2023
 
 ::: concise
 - Optimized R scripts for environmental data processing
-- Implemented statistical models for algal bloom prediction.
-- Produced dynamic visualizations with ggplot2 and gganimate.
-- Supported research through technical R expertise.
+- Implemented statistical models for algal bloom prediction
+- Produced dynamic visualizations with ggplot2 and gganimate
+- Supported research through technical R expertise
 :::
 
 ### Graduate Research Assistant
@@ -162,7 +162,7 @@ Remote
 Jun 2023 - Feb 2023
 
 ::: concise
-- Literature review to identify relevant environmental parameters for different types of green infrastructure.
+- Literature review to identify relevant environmental parameters for different types of green infrastructure
 -  Review Best Management Practices (BMPs) to identify the role landscape factors play when selecting different types of green infrastructure
 :::
 
@@ -210,7 +210,7 @@ Honors & Awards {data-icon=award}
 
 ### GIS Web App Contest - 1st Place
 
-Award for best Web App voted on by attendees of the GIS Day conference at Old Dominion University in recognition of our internal Newport News Gun Crime application.
+Award for best Web App voted on by attendees of the GIS Day conference at Old Dominion University in recognition of our internal Newport News Gun Crime application
 
 Norfolk, Virginia
 
@@ -219,7 +219,7 @@ Norfolk, Virginia
 
 ### Best Geographic Analysis
 
-Issued by Virginia Association for Mapping and Land Information Systems at the VAMLIS 2023 GeoCon conference in recognition of my poster "Using GIS to Identify Habitat for an Endangered Coastal Songbird".
+Issued by Virginia Association for Mapping and Land Information Systems at the VAMLIS 2023 GeoCon conference in recognition of my poster "Using GIS to Identify Habitat for an Endangered Coastal Songbird"
 
 Harrisonburg, Virginia
 
