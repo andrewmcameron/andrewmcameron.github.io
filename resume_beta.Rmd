@@ -5,16 +5,13 @@ date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
     # set it to true for a self-contained HTML page but it'll take longer to render
-    self_contained: true
+    self_contained: false
 # uncomment this line to produce HTML and PDF in RStudio:
-# knit: pagedown::chrome_print
+knit: pagedown::chrome_print
 ---
 ```{=html}
 <style>
-  .image-container {
-    margin-top: -5px !important; /* Adjust this value as needed */
-  }
-    
+
 h1 {
     font-family: 'Kanit', sans-serif;
     font-weight: 400 !important;
@@ -52,8 +49,8 @@ Aside
 
 
 <div class="image-container">
-  <img src="media/logos/circle_logo.png" alt="logo" style="width:100%;">
-</div>
+  <img src="media/logos/circle_logo.png" alt="logo" style="width:100% box-shadow:-4px -4px 10px rgba(0,0,0,0.2);;">
+<div>
 
 
 Contact Info {#contact}
@@ -119,7 +116,7 @@ present - May 2023
 
 ::: concise
 - Programmatic scripting for GIS data preparation and analysis 
-- Implementing ArcGIS Tools for spatial solutions
+- Implementing ArcGIS tools for spatial solutions
 - Collaboration on data accuracy and GIS problem-solving
 :::
 
@@ -224,6 +221,8 @@ Issued by Virginia Association for Mapping and Land Information Systems at the V
 Harrisonburg, Virginia
 
 2023
+
+
 
 
 

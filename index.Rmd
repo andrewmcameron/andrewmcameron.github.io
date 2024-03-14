@@ -30,7 +30,7 @@ h2 {
 
 .logo {
   vertical-align: middle;
-  width: 120px;
+  width: 80px;
   height: auto;
 }
 
@@ -53,9 +53,11 @@ h2 {
 </style>
 ```
 <h1>
-  andrew  <img src="media/amc_logo_white.png" alt="Logo" class="logo"> cameron
+  andrew  <img src="media/amc_logo_white.png" alt="Logo" class="logo"> cameron  
 </h1>
+  
 <br>
+
  <img src="media/me_jujuy_warm.JPG" alt="That's me" class="center" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);width: 525px;"> 
  
  <br>

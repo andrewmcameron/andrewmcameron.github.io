@@ -63,7 +63,7 @@ h3 {
 ```
 
 <hr>
-These are some examples of my GIS-based projects. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and to a lesser degree Python/ArcPy. 
+Below are some examples of my GIS work. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and to a lesser degree Python/ArcPy. 
 <hr>
 <br>
 
@@ -225,7 +225,7 @@ This analysis helped to highlight the spatial concentration of gun crime inciden
 
 <!-- Ensures the container wraps around floated elements -->
 
-<figure style="float: left; margin-right: 15px; margin-bottom: 8px;">
+<figure style="float: left; margin-right: 15px; margin-bottom: 3.5px;">
 
 <!-- Floats the figure and adds space between the text and the image -->
 
