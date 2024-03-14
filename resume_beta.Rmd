@@ -5,9 +5,9 @@ date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
     # set it to true for a self-contained HTML page but it'll take longer to render
-    self_contained: false
+    self_contained: true
 # uncomment this line to produce HTML and PDF in RStudio:
-knit: pagedown::chrome_print
+# knit: pagedown::chrome_print
 ---
 ```{=html}
 <style>
@@ -50,7 +50,7 @@ Aside
 
 <div class="image-container">
   <img src="media/logos/circle_logo.png" alt="logo" style="width:100% box-shadow:-4px -4px 10px rgba(0,0,0,0.2);;">
-<div>
+</div>
 
 
 Contact Info {#contact}
@@ -198,6 +198,14 @@ M.A. - Spanish
 Middlebury, Vermont
 
 2015
+
+### College of the Holy Cross
+
+B.A. - Philosophy
+
+Worcester, Massachusetts
+
+2007
 
 
 
