@@ -64,7 +64,7 @@ h3 {
 <hr>
 
 R is where it's at.
-Since being introduced to R and RStudio, they have become essential components of most (if not all) of my computer-based workflows.
+Since being introduced to R and RStudio, they have become essential components of most (if not all) of my workflows.
 From geospatial projects and data analysis, to data visualizations and producing documents and reports, R is an incredibly powerful tool.
 Here are some examples of ways I have used R to conduct my own analysis, provide research support, assist colleagues, and for my own pet projects. You can also check out the source code for each project as a knitted R Markdown file. 
 
@@ -82,15 +82,15 @@ Here are some examples of ways I have used R to conduct my own analysis, provide
 
 I've been fortunate to be able to provide water quality research assistance to the <a href="https://blogs.vcu.edu/pabukaveckas/" target="blank">Bukaveckas Lab</a> at Virginia Commonwealth University, in the form of program scripting, data analysis, and data visualization, since December of 2023.
 
-Among other projects, I developed a script to facilitate the longitudinal analysis and modeling of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/">chlorophyll a (CHLa) levels in the James River</a> using multiple linear and nonlinear approaches.
+Among other projects, I developed a script to facilitate the longitudinal analysis and modeling of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/" target="_blank">chlorophyll a (CHLa) levels in the James River</a> using multiple linear and nonlinear approaches.
 
 The knitted HTML output contains tables with summary statistics for the all years in the data set; regression statistics for all years combined, as well as individual years, by model; model plots with best fit line; model-specific time series plots; and time series plots for CHLa and dissolved organic nitrogen.
 
 The script is designed to dynamically adapt to changes in the dataset, accommodating new data from subsequent years without requiring manual updates to its structure or content.
 
-More detailed program documenation is available <a href="https://github.com/andrewmcameron/modelling-algalBlooms/blob/main/README.md">on my Githib page</a>.
+More detailed program documenation is available <a href="https://github.com/andrewmcameron/modelling-algalBlooms/blob/main/README.md" target="_blank">on my Github page</a>.
 
--   <b><a href="portfolio/chla_script_noEval.html" target="blank">source code</a></b>
+-   <b><a href="portfolio/chla_script_noEval.html" target="_blank">source code</a></b>
 
 <hr>
 
@@ -152,7 +152,7 @@ The end result is two CSV files ready to be brought into ArcGIS Pro and geocoded
 
 This was less a coding project and more a way to help folks in my office use some basic coding to programmatically access the <a href="https://www.openstreetmap.org/#map=11/42.1759/-71.4407" target="blank">OpenStreetMap</a> database. 
 
-Newport News, VA has an amazing <a href-="https://geohub.nnva.gov/" target="blank">Geohub site</a>, but - for obvious reasons - the city does not maintain spatial data layers on *every* feature that exists in the city. After a colleague shared in a meeting that she had to quickly put together a suitability analysis using features that she pulled in from multiple sources around the web - e.g., shopping, grocery stores, cinemas,  bowling alleys, and sundry other sites for leisure activities - it occurred to me that the GIS team could benefit from being able to leverage the OpenStreetMap API in this sort of situation, should it arise again in the future. 
+Newport News, VA has an amazing <a href-="https://geohub.nnva.gov/" target="_blank">Geohub site</a>, but - for obvious reasons - the city does not maintain spatial data layers on *every* feature that exists in the city. After a colleague shared in a meeting that she had to quickly put together a suitability analysis using features that she pulled in from multiple sources around the web - e.g., shopping, grocery stores, cinemas,  bowling alleys, and sundry other sites for leisure activities - it occurred to me that the GIS team could benefit from being able to leverage the OpenStreetMap API in this sort of situation, should it arise again in the future. 
 
 I created a tutorial, adapting from this <a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html" target="blank">excellent and more comphrensive vignette</a></b> on the CRAN website, for using R's `osmdata` package. It is written with the goal that someone who had never used R or RStudio before would nevertheless be able to access the API, pull in the data they are looking for, and export it as a JSON that they can pull into the ArcGIS Pro environment for use in mapping and analysis. 
 

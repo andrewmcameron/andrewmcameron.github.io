@@ -84,7 +84,7 @@ Below are some examples of my GIS work. They involved some combination of ArcGIS
 </div>
 
 <div class="text2">
-[Colima Warbler](https://www.audubon.org/field-guide/bird/colima-warbler) (*Leiothlypis crissalis*) is a migratory songbird whose breeding habitat is limited to parts of the rugged, mountainous terrain of Mexico's Sierra Madre Occidental and the Chisos Mountains of Big Bend National Park.
+<a href="https://www.audubon.org/field-guide/bird/colima-warbler" target="_blank">Colima Warbler</a> (*Leiothlypis crissalis*) is a migratory songbird whose breeding habitat is limited to parts of the rugged, mountainous terrain of Mexico's Sierra Madre Occidental and the Chisos Mountains of Big Bend National Park.
 Range maps for this species tend to significantly overstate its extant distribution within the United States.
 To get a sense of species' 'official' range, check out the map I created below, based on the distributions recognized by the United States Geological Survey and BirdLife International.
 
@@ -100,7 +100,7 @@ I used these attributes to derive a model of probable species distribution withi
 
 <!-- Floats the figure to the right and adds space between the text and the image -->
 
-<a href="media/colima_modelbuilder.png"><img src="media/colima_modelbuilder.png" style=" width:350px"/></a>
+<a href="media/colima_modelbuilder.png" target="_blank"><img src="media/colima_modelbuilder.png" style=" width:350px"/></a>
 <figcaption style="text-align: center; width:350px; font-size: .8em;">
 
 <i>ArcGIS Pro model builder workflow for this analysis. Click to enlarge.</i>
@@ -114,7 +114,7 @@ The final model reduced the area of likely occurrence by *98.24%* as compared wi
 The results not only highlight the disparities between traditional range maps and the reality of species distribution but also underscored the potential for geospatial analyses to enhance our understanding of species habitats, contributing to more effective conservation strategies.
 
 For a detailed discussion of data sources, methods, and results, <b><a href="portfolio/colima_report.pdf" target="_blank" rel="noopener noreferrer">read my full report</a></b>.
-Or check out this <b>[PDF version](porfolio/colima_presentation)</b> of a presentation I gave.
+Or check out this <b>[PDF version](porfolio/Colima_presentation)</b> of a presentation I gave.
 </div>
 :::
 
@@ -246,7 +246,7 @@ Photo credit: Mike Kilpatrick</i>
 In this project, I carried out an analysis to produce a habitat suitability index (HSI) aimed at identifying potential saltmarsh sparrow winter habitat in southeast Virginia - effectively the southern most extent of their winter range - in areas not already protected under a biodiversity or conservation mandate.
 
 Confronted with the combined effects of sea-level rise and human coastline modification, the saltmarsh sparrow’s continued survival is by no means guaranteed.
-The North American Bird Conservation Initiative's [2022 'State of the Birds' report](https://www.stateofthebirds.org/2022/) estimates that the species' population has declined by more than *half* since 1970.
+The North American Bird Conservation Initiative's <a href="https://www.stateofthebirds.org/2022/" target="_blank">2022 'State of the Birds' report</a> estimates that the species' population has declined by more than *half* since 1970.
 The report anticipates a further 50% decline over the next half century.
 Similarly, researchers have demonstrated a staggering 9% annual rate of population decline since the mid-1990s.
 If that trend continues, they predict a collapse of the global population within 50 years, with as few as 500 individuals left by mid-century.
@@ -426,6 +426,6 @@ With variables selected, I applied a generalized linear mixed model approach to 
 * In grasslands, both PLAND at 1000m and AI at 1000m were found to be significant predictors.
 * A significantly higher amount of variation in avian species richness was explained by grassland model (42.6%) than forest models (<12%).
 
-Here's a <b>[PDF version of a presentation](portfolio/le_final.pdf)</b> I gave where you can take a more detailed look at some of the results.
+Here's a <b><a href="portfolio/le_final.pdf" taget="_blank">PDF version of a presentation]</a></b> I gave where you can take a more detailed look at some of the results.
 </div>
 
