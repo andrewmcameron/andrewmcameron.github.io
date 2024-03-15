@@ -114,7 +114,7 @@ The final model reduced the area of likely occurrence by *98.24%* as compared wi
 The results not only highlight the disparities between traditional range maps and the reality of species distribution but also underscored the potential for geospatial analyses to enhance our understanding of species habitats, contributing to more effective conservation strategies.
 
 For a detailed discussion of data sources, methods, and results, <b><a href="portfolio/colima_report.pdf" target="_blank" rel="noopener noreferrer">read my full report</a></b>.
-Or check out this <b><a href="porfolio/Colima_presentation.pdf" target="_blank">PDF version</a></b> of a presentation I gave.
+Or check out this <b><a href="portfolio/Colima_presentation.pdf" target="_blank">PDF version</a></b> of a presentation I gave.
 </div>
 :::
 
