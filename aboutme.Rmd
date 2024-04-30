@@ -82,12 +82,11 @@ I’m a passionate GIS professional and data analyst with an abiding love of the
 From an early age growing up in the Berkshires of Massachusetts, where summer meant attending Audubon camp, overnights in the Adirondack Mountains, and exploring my own backyard, I developed a deep appreciation for nature, natural spaces, and the value of time spent outdoors.
 I seek to honor that appreciation by applying my skills in ways that enhance environmental conservation efforts, contribute to ecological research, and promote sustainable practices.
 
-I’ve been fortunate to develop my professional skillset in a variety of arenas.
-This includes working as a GIS analyst with the City of Newport New, Virginia on a range of projects, from gun violence mapping and analysis to laying the groundwork for an urban tree inventory; collaborating to provide GIS and technical support for an ongoing project that seeks to increase equity and intentionality in urban agriculture by identifying optimal urban sites using geospatial modelling; and providing programmatic data wrangling, analysis, and scripting in R in support of important research around environmental water quality and climate change.
+I’ve been fortunate to develop my professional skill set in a variety of arenas.
+This includes working as a GIS analyst with the City of Newport News on a range of projects, from gun violence mapping and analysis to laying the groundwork for an urban tree inventory; collaborating to provide GIS and technical support for an ongoing project that seeks to increase equity and intentionality in urban agriculture by identifying optimal urban sites using geospatial modelling; and providing programmatic data wrangling, analysis, and scripting in R in support of important research around environmental water quality and climate change.
 :::
 
-Professional growth is essential. I am constantly working to refine my abilities and to learn and develop new skills.
-Recently I have been digging in to PostgreSQL with PostGIS to build out/host a relational spatial database, how to leverage the Python API to access Google Earth Engine, and using the Natural Earth public vector dataset for enhanced cartography.
+Professional growth is essential. I constantly work to refine my abilities and to learn and develop new skills. Recently I have been digging in to PostgreSQL with PostGIS to build and host a relational spatial database; leveraging the Python API to access Google Earth Engine; and using the Natural Earth public vector dataset for enhanced cartography.
 
 I am bilingual in English and Spanish, and hold a Master of Spanish from Middlebury College.
 Prior to pursuing a career path in GIS and data analysis, I worked for many years teaching Spanish at the secondary school level.
@@ -96,8 +95,7 @@ I was fortunate to be in a position to take the leap, and to have a supportive p
 
 And I love birds and birding.
 They provide intellectual fascination, aesthetic richness, and a unique connection to the natural world.
-Nothing gives greater pleasure than to spend time deep in an eastern hardwood forest during early summer, falling asleep to the sound of whip-or-wills and owls and waking to the dawn chorus of thrushes, warblers, and vireos.
-What a gift to be able to experience it all.
+Nothing gives greater pleasure than to spend time deep in an eastern hardwood forest during early summer, falling asleep to the sound of whip-or-wills and owls and waking to the dawn chorus of thrushes, warblers, and vireos. What a gift to be able to experience it all.
 
 </div>
 
