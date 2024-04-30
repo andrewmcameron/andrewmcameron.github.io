@@ -1,20 +1,290 @@
 ---
-title: "coming soon"
+title: "Andrew Cameron's Resume"
+author: Andrew M. Cameron
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+# uncomment this line to produce HTML and PDF in RStudio:
+# knit: pagedown::chrome_print
 ---
-
 ```{=html}
 <style>
-h1.title {
+
+h1 {
     font-family: 'Kanit', sans-serif;
-    font-weight: 600;
+    font-weight: 400 !important;
     font-style: normal;
-    font-size: 62px;
-    letter-spacing: 8px; 
-    text-align:center;
+    font-size: 28px !important;
+    letter-spacing: 5px; 
+    text-align:left;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1.15px;
+  text-align: left;
+}
+
+.sidetext {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 1.15px;
+      text-align:left;
+      }
+      
+.esri-tool {
+    font-size: 9.5px;
+    margin-left: 20px; /* Adjust the indentation */
+  }
+  
+.small-text {
+    font-size: 1.0em; /*use to override the 'consise' styling from the default CSS, which creates two columns of text
+}
+
+.details .small-text li {
+  margin: 0 !important;
+  margin-left: 0 !important;
+  text-indent: 0em; /* Pulls the text to start from the bullet point */
+  padding-left: 0em; /* Adds padding to ensure alignment for wrapped lines */
+}
+
+.details .small-text li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 </style>
 ```
-```
-<hr>
 
-<iframe src = "docs/resume_beta.html">
+Aside
+================================================================================
+
+
+<div class="image-container">
+  <img src="media/logos/circle_logo.png" alt="logo" style="width:100% box-shadow:-4px -4px 10px rgba(0,0,0,0.2);;">
+</div>
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+<div class="sidetext">
+- <i class="fa fa-envelope"></i> cameronam2@vcu.edu
+- <i class="fa fa-github"></i> [github.com/andrewmcameron](https://github.com/andrewmcameron)
+- <i class="fa fa-linkedin"></i> [linkedin.com/andrew-m-cameron](https://www.linkedin.com/in/andrew-m-cameron/)
+- <i class="fa fa-phone"></i> 413-329-6650
+</div>
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+- <b>Proficient</b>
+- R & RStudio
+- ArcGIS Pro
+- ArcGIS Online
+- Cartographic Visualization
+- Data Wrangling
+- Data Analysis
+- Suitability Modeling
+- Bilingual English/Spanish
+- Geodatabase Management
+- Esri tools
+  - <div class="esri-tool">Survey123 Connect</div>
+  - <div class="esri-tool">Web Maps</div>
+  - <div class="esri-tool">Field Maps</div> 
+  - <div class="esri-tool">Experience Builder</div>
+  - <div class="esri-tool">Model Builder</div>
+  - <div class="esri-tool">Dashboards</div>
+
+
+- <b>Working Knowledge</b>
+- Python/ArcPy
+- Watershed Analysis
+- SQL
+- Statistical Analysis
+
+
+
+
+
+
+Main
+================================================================================
+
+Andrew <b>Cameron</b> {#title}
+--------------------------------------------------------------------------------
+
+I’m a former teacher with over a decade of professional experience in education who made a pivot to the world of environmental GIS and data analysis, and I haven’t looked back since. Bilingual, skilled in GIS, data analysis, and problem solving, and ready to make an impact.
+
+
+Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### GIS Analyst
+
+City of Newport News
+
+Newport News, Virginia
+
+present - May 2023
+
+::: concise
+- Programmatic scripting for GIS data preparation and analysis 
+- Implementing ArcGIS tools for spatial solutions
+- Collaboration on data accuracy and GIS problem-solving
+:::
+
+### Graduate Research Geospatial Analyst
+
+Virginia Commonwealth Univ.
+
+Richmond, Virginia
+
+present - Jan 2024
+
+::: concise
+- Working to enhance urban agriculture site selection, sustainability, and equity 
+- Preparation of technical project summaries
+- GIS data sourcing and acquisition
+- GIS data innovation and spatial analysis 
+:::
+
+### Environmental Data Research Assistant
+
+Virginia Commonwealth Univ.
+
+Remote
+
+present - Dec 2023
+
+::: concise
+- Optimized R scripts for environmental data processing
+- Implemented statistical models for algal bloom prediction
+- Produced dynamic visualizations with ggplot2 and gganimate
+- Supported research through technical R expertise
+:::
+
+### Graduate Research Assistant
+
+Virginia Commonwealth Univ.
+
+Remote
+
+Jun 2023 - Feb 2023
+
+::: concise
+- Literature review to identify relevant environmental parameters for different types of green infrastructure
+-  Review Best Management Practices (BMPs) to identify the role landscape factors play when selecting different types of green infrastructure
+:::
+
+### Middle and High School Spanish Teacher
+
+Newport News Public Schools
+
+Newport News, Virginia
+
+Jun 2021 - Aug 2013
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### Virginia Commonwealth University
+
+Master of Environmental Studies
+
+Richmond, Virginia
+
+2024
+
+
+### Virginia Commonwealth University
+
+GIS Graduate Certificate
+
+Richmond, Virginia
+
+
+### Middlebury College
+
+M.A. - Spanish
+
+Middlebury, Vermont
+
+2015
+
+### College of the Holy Cross
+
+B.A. - Philosophy
+
+Worcester, Massachusetts
+
+2007
+
+
+
+
+Honors & Awards {data-icon=award}
+--------------------------------------------------------------------------------
+
+### GIS Web App Contest - 1st Place
+
+Hampton Roads GIS Day Conference
+
+Norfolk, Virginia
+
+::: small-text
+- Award for best Web App voted on by attendees of the GIS Day conference at Old Dominion University in recognition of our internal Newport News Gun Crime application
+:::
+
+Nov 2023
+
+
+### Best Geographic Analysis
+
+Virginia Association for Mapping and Land Information Systems Conference
+
+Harrisonburg, Virginia
+
+::: small-text
+- Issued by Virginia Association for Mapping and Land Information Systems at the VAMLIS 2023 GeoCon conference in recognition of my poster “Using GIS to Identify Habitat for an Endangered Coastal Songbird”
+:::
+
+Apr 2023
+
+
+
+
+Presentations {data-icon=comment}
+--------------------------------------------------------------------------------
+
+### "Using Urban Land Evaluation and Site Assessment (uLESA) to Identify Ideal Locations for Urban Agriculture"
+
+Miami Valley Section of APA Ohio 
+
+Virtual
+
+::: small-text
+- Co-presenter with Dr. John Jones. Presentation on urban agriculture and the uLESA model aimed at planning professionals.
+:::
+
+Apr 2024
+
+
+### "Little Patch, Big Difference: How Small Green Spaces Can Take on Big importance for Migrating Birds in Developed Areas"
+
+Newport News Green Foundation
+
+Newport News, VA
+
+::: small-text
+- Invited public talk on the importance of small green spaces for migratory birds in urban areas, utilizing NLCD data, eBird data, and two local case studies to make the point.
+:::
+
+Apr 2023
+

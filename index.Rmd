@@ -53,7 +53,7 @@ h2 {
 </style>
 ```
 <h1>
-  andrew  <img src="media/amc_logo_white.png" alt="Logo" class="logo"> cameron  
+  andrew  <img src="media/logos/amc_logo_white.png" alt="Logo" class="logo"> cameron  
 </h1>
   
 <br>

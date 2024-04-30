@@ -63,7 +63,7 @@ h3 {
 ```
 
 <hr>
-Below are some examples of my GIS work. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and to a lesser degree Python/ArcPy. 
+Below are some examples of my GIS work. They involved some combination of ArcGIS Pro, R, ArcGIS Online, and Python/ArcPy. 
 <hr>
 <br>
 
@@ -93,11 +93,11 @@ They employ a ground-nesting strategy and prefers steep (≥35°), north-facing 
 
 I used these attributes to derive a model of probable species distribution within the US that radically reduces the area of likely occurrence as compared with the official USGS species range polygon. The project primarily involved raster analysis: deriving slope and aspect from digital elevation models, extracting raster cells based on specified attributes and mask polygons, reclassifying cells to standardized values, and overlaying raster layers to calculte the sum of their cells.
 </div>
+
 ::: {style="overflow: hidden;"}
 <!-- Ensures the container wraps around floated elements -->
 
 <figure style="float: right; margin-left: 20px;">
-
 <!-- Floats the figure to the right and adds space between the text and the image -->
 
 <a href="media/colima_modelbuilder.png" target="_blank"><img src="media/colima_modelbuilder.png" style=" width:350px"/></a>
@@ -160,6 +160,7 @@ Inset map reflects model extent within existing USGS range polygon.</i>
 
 ### aggregating gun crime incidents to reveal spatial patterns
 :::
+
 <div class="text2">
 A significant part of my time working as an intern with the City of Newport News GIS team involved processing, geocoding, mapping, and analyzing five years (2018-2022) worth of gun crime data as part of the city's Gun Violence Intervention Program.
 
