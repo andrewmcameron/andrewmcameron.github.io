@@ -85,8 +85,7 @@ Skills {#skills}
 --------------------------------------------------------------------------------
 - <b>Proficient</b>
 - R & RStudio
-- ArcGIS Pro
-- ArcGIS Online
+- ArcGIS Pro & ArcGIS Online
 - Cartographic Visualization
 - Data Wrangling
 - Data Analysis
@@ -104,7 +103,7 @@ Skills {#skills}
 
 - <b>Working Knowledge</b>
 - Python/ArcPy
-- Watershed Analysis
+- PostgreSQL & PostGIS
 - SQL
 - Statistical Analysis
 
@@ -231,6 +230,18 @@ Worcester, Massachusetts
 
 Honors & Awards {data-icon=award}
 --------------------------------------------------------------------------------
+
+### Most Outstanding Graduate Student
+
+Virginia Commonwealth University Center for Environmental Studies
+
+Richmond, Virginia
+
+::: small-text
+- Awarded at the completion of my graduate studies in recognition of academic performance, professional development, and contributions to the program.
+:::
+
+May 2024
 
 ### GIS Web App Contest - 1st Place
 

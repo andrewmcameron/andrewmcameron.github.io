@@ -70,7 +70,7 @@ Here are some examples of ways I have used R to conduct my own analysis, provide
 <br>
 <hr>
 
-<br><br> <!-- NEW SECTION -->
+<br>
 
 ::: {style="text-align: center;"}
 ## visualizing water temperature over time
