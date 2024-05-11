@@ -63,38 +63,14 @@ h3 {
 ```
 <hr>
 
-R is where it's at.
-Since being introduced to R and RStudio, they have become essential components of most (if not all) of my workflows.
+R and RStudio are essential components of most (if not all) of my workflows.
 From geospatial projects and data analysis, to data visualizations and producing documents and reports, R is an incredibly powerful tool.
 Here are some examples of ways I have used R to conduct my own analysis, provide research support, assist colleagues, and for my own pet projects. You can also check out the source code for each project as a knitted R Markdown file. 
 
+<br>
 <hr>
 
-<br>
-
-::: {style="text-align: center;"}
-## modelling estuarine algal blooms
-:::
-
-<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
-<a href="media/chla_modelsuccess.png" target="blank"><img src="media/chla_modelsuccess.png" alt="model predictive success" width="600" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a>
-</div>
-
-I've been fortunate to be able to provide water quality research assistance to the <a href="https://blogs.vcu.edu/pabukaveckas/" target="blank">Bukaveckas Lab</a> at Virginia Commonwealth University, in the form of program scripting, data analysis, and data visualization, since December of 2023.
-
-Among other projects, I developed a script to facilitate the longitudinal analysis and modeling of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/" target="_blank">chlorophyll a (CHLa) levels in the James River</a> using multiple linear and nonlinear approaches.
-
-The knitted HTML output contains tables with summary statistics for the all years in the data set; regression statistics for all years combined, as well as individual years, by model; model plots with best fit line; model-specific time series plots; and time series plots for CHLa and dissolved organic nitrogen.
-
-The script is designed to dynamically adapt to changes in the dataset, accommodating new data from subsequent years without requiring manual updates to its structure or content.
-
-More detailed program documenation is available <a href="https://github.com/andrewmcameron/modelling-algalBlooms/blob/main/README.md" target="_blank">on my Github page</a>.
-
--   <b><a href="portfolio/chla_script_noEval.html" target="_blank">source code</a></b>
-
-<hr>
-
-<br>
+<br><br> <!-- NEW SECTION -->
 
 ::: {style="text-align: center;"}
 ## visualizing water temperature over time
@@ -114,9 +90,10 @@ I was already familiar with R's `ggplot2` before beginning this project, but the
 - <b><a href="portfolio/james_longterm.html" target="blank">data wrangling source code</a></b>
 - <b><a href="portfolio/animatedplot.html" target="blank">animated plot source code</a></b>
 
+<br>
 <hr>
 
-<br>
+<br><br> <!-- NEW SECTION -->
 
 ::: {style="text-align: center;"}
 ## gun data preprocessing automation
@@ -141,9 +118,35 @@ The end result is two CSV files ready to be brought into ArcGIS Pro and geocoded
 
 - <b><a href="portfolio/Script1_InitialDataProcessing.html" target="blank">source code</a></b>
 
+<br>
 <hr>
 
+<br><br> <!-- NEW SECTION -->
+
+::: {style="text-align: center;"}
+## modelling estuarine algal blooms
+:::
+
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+<a href="media/chla_modelsuccess.png" target="blank"><img src="media/chla_modelsuccess.png" alt="model predictive success" width="600" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a>
+</div>
+
+I've been fortunate to be able to provide water quality research assistance to the <a href="https://blogs.vcu.edu/pabukaveckas/" target="blank">Bukaveckas Lab</a> at Virginia Commonwealth University, in the form of program scripting, data analysis, and data visualization, since December of 2023.
+
+Among other projects, I developed a script to facilitate the longitudinal analysis and modeling of <a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/" target="_blank">chlorophyll a (CHLa) levels in the James River</a> using multiple linear and nonlinear approaches.
+
+The knitted HTML output contains tables with summary statistics for the all years in the data set; regression statistics for all years combined, as well as individual years, by model; model plots with best fit line; model-specific time series plots; and time series plots for CHLa and dissolved organic nitrogen.
+
+The script is designed to dynamically adapt to changes in the dataset, accommodating new data from subsequent years without requiring manual updates to its structure or content.
+
+More detailed program documenation is available <a href="https://github.com/andrewmcameron/modelling-algalBlooms/blob/main/README.md" target="_blank">on my Github page</a>.
+
+-   <b><a href="portfolio/chla_script_noEval.html" target="_blank">source code</a></b>
+
 <br>
+<hr>
+
+<br><br> <!-- NEW SECTION -->
 
 
 ::: {style="text-align: center;"}

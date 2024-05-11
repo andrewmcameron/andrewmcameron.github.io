@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>coding &amp; analysis</title>
+
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- custom_header.html -->
+
+<!-- fonts -->
+  <!-- caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <!-- Roboto --> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">home</a>
+</li>
+<li>
+  <a href="geospatial.html">geospatial</a>
+</li>
+<li>
+  <a href="coding.html">coding &amp; analysis</a>
+</li>
+<li>
+  <a href="resume.html">resume</a>
+</li>
+<li>
+  <a href="aboutme.html">about me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">coding &amp; analysis</h1>
+
+</div>
+
+
+<style>
+h1.title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 62px;
+    letter-spacing: 8px; 
+    text-align:center;
+}
+
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h3 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 380;
+    font-style: normal;
+}
+
+.text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 24px
+      letter-spacing: 1.15px;
+      text-align:center;
+      }
+      
+.text2 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 24px
+      letter-spacing: 1.15px;
+      }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap */
+  justify-content: center; /* Centers items horizontally, adjust as needed */
+}
+
+.column {
+  flex: 1; /* Adjust this to control how columns grow */
+  max-width: 45%; /* Maximum width of each column */
+  padding: 5px;
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+</style>
+<hr>
+<p>R is where it’s at. Since being introduced to R and RStudio, they
+have become essential components of most (if not all) of my workflows.
+From geospatial projects and data analysis, to data visualizations and
+producing documents and reports, R is an incredibly powerful tool. Here
+are some examples of ways I have used R to conduct my own analysis,
+provide research support, assist colleagues, and for my own pet
+projects. You can also check out the source code for each project as a
+knitted R Markdown file.</p>
+<hr>
+<p><br></p>
+<div id="modelling-estuarine-algal-blooms" class="section level2"
+style="text-align: center;">
+<h2>modelling estuarine algal blooms</h2>
+</div>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+<p><a href="media/chla_modelsuccess.png" target="blank"><img src="media/chla_modelsuccess.png" alt="model predictive success" width="600" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a></p>
+</div>
+<p>I’ve been fortunate to be able to provide water quality research
+assistance to the
+<a href="https://blogs.vcu.edu/pabukaveckas/" target="blank">Bukaveckas
+Lab</a> at Virginia Commonwealth University, in the form of program
+scripting, data analysis, and data visualization, since December of
+2023.</p>
+<p>Among other projects, I developed a script to facilitate the
+longitudinal analysis and modeling of
+<a href="https://blogs.vcu.edu/pabukaveckas/research/james-river-ecosystem-study/" target="_blank">chlorophyll
+a (CHLa) levels in the James River</a> using multiple linear and
+nonlinear approaches.</p>
+<p>The knitted HTML output contains tables with summary statistics for
+the all years in the data set; regression statistics for all years
+combined, as well as individual years, by model; model plots with best
+fit line; model-specific time series plots; and time series plots for
+CHLa and dissolved organic nitrogen.</p>
+<p>The script is designed to dynamically adapt to changes in the
+dataset, accommodating new data from subsequent years without requiring
+manual updates to its structure or content.</p>
+<p>More detailed program documenation is available
+<a href="https://github.com/andrewmcameron/modelling-algalBlooms/blob/main/README.md" target="_blank">on
+my Github page</a>.</p>
+<ul>
+<li><b><a href="portfolio/chla_script_noEval.html" target="_blank">source
+code</a></b></li>
+</ul>
+<hr>
+<p><br></p>
+<div id="visualizing-water-temperature-over-time" class="section level2"
+style="text-align: center;">
+<h2>visualizing water temperature over time</h2>
+</div>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+<p><a href="media/animatedplot.gif" target="blank"><img src="media/animatedplot.gif" alt="model predictive success" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a></p>
+</div>
+<p>Another fun and challenging project I was able to do for the
+Bukaveckas Lab involved combining 15 years of water quality monitoring
+data to generate daily mean summary statistics for select variables, as
+well as produce an animated plot depicting seasonal patterns and
+inter-annual variation in water temperature at VCU’s Rice River Center
+monitoring station.</p>
+<p>This required quite a bit of wrangling and problem solving to get
+from A to B. I made extensive use of nested list structures to organize
+and manage the data, which allowed me to systematically separate and
+categorize data by year and tab across and within Excel workbook files.
+This was critical given the inconsistency in the data schema and
+variable naming conventions over the 15 years that data were
+collected.</p>
+<p>I was already familiar with R’s <code>ggplot2</code> before beginning
+this project, but the need for a dynamic plot gave me the chance to
+explore the <code>gganimate</code> package - something I look forward to
+doing more of in the future!</p>
+<ul>
+<li><b><a href="portfolio/james_longterm.html" target="blank">data
+wrangling source code</a></b></li>
+<li><b><a href="portfolio/animatedplot.html" target="blank">animated
+plot source code</a></b></li>
+</ul>
+<hr>
+<p><br></p>
+<div id="gun-data-preprocessing-automation" class="section level2"
+style="text-align: center;">
+<h2>gun data preprocessing automation</h2>
+</div>
+<div class="row">
+<div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
+<p><img src="media/gunmap.png" alt="model predictive success" width="750" 
+  style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></p>
+</div>
+</div>
+<p>The
+<a href="https://andrewmcameron.github.io/geospatial.html#urban_gun_crime">urban
+gun crime work</a> that I did during my time as a member of the City of
+Newport News GIS team gave me the chance to carry out some interesting
+spatial analyses and work on developing several apps with the Esri tool
+kit, including Experience Builder, Dashboards, and web maps (none of
+which are public-facing, unfortunately). But in order to get to that
+point, the data generated from the police department’s record management
+system query first needed substantial massaging and preparation.</p>
+<p>To accommodate the need for re-running analyses and updating the
+dashboard annually or semi-annually with new data, I developed a script
+to automate the otherwise laborious task of preprocessing the raw RMS
+query outputs. I wrote the script in a heavily annotated R Markdown
+file, so that future users can easily interact with it using RStudio’s
+‘visual’ mode and execute the code with little to no knowledge of R
+required. The user needs only to define two variables: a new folder name
+and the path of the Excel workbook file containing the raw data. The
+script takes care of the rest. The end result is two CSV files ready to
+be brought into ArcGIS Pro and geocoded.</p>
+<ul>
+<li><b><a href="portfolio/Script1_InitialDataProcessing.html" target="blank">source
+code</a></b></li>
+</ul>
+<hr>
+<p><br></p>
+<div id="intro-to-osmdata" class="section level2"
+style="text-align: center;">
+<h2>intro to <code>osmdata</code></h2>
+</div>
+<p>This was less a coding project and more a way to help folks in my
+office use some basic coding to programmatically access the
+<a href="https://www.openstreetmap.org/#map=11/42.1759/-71.4407" target="blank">OpenStreetMap</a>
+database.</p>
+<p>Newport News, VA has an amazing
+<a href="https://geohub.nnva.gov/" target="_blank">Geohub site</a>, but
+- for obvious reasons - the city does not maintain spatial data layers
+on <em>every</em> feature that exists in the city. After a colleague
+shared in a meeting that she had to quickly put together a suitability
+analysis using features that she pulled in from multiple sources around
+the web - e.g., shopping, grocery stores, cinemas, bowling alleys, and
+sundry other sites for leisure activities - it occurred to me that the
+GIS team could benefit from being able to leverage the OpenStreetMap API
+in this sort of situation, should it arise again in the future.</p>
+<p>I created a tutorial, adapting from this
+<a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html" target="blank">excellent
+and more comphrensive vignette</a></b> on the CRAN website, for using
+R’s <code>osmdata</code> package. It is written with the goal that
+someone who had never used R or RStudio before would nevertheless be
+able to access the API, pull in the data they are looking for, and
+export it as a JSON that they can pull into the ArcGIS Pro environment
+for use in mapping and analysis.</p>
+<ul>
+<li><b><a href="portfolio/OSMdata_tutorial.html" target="blank"><code>osmdata</code>
+tutorial</a></b></li>
+</ul>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
