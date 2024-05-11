@@ -68,7 +68,7 @@ Below are some examples of my GIS work. They involved some combination of ArcGIS
 <br>
 
 ::: {style="text-align: center; font-size: 17px;"}
-## eBird Life List Database
+## eBird life list database
 
 ### leveraging PostgreSQL and PostGIS for geospatial data management
 :::
