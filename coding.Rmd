@@ -95,6 +95,134 @@ I was already familiar with R's `ggplot2` before beginning this project, but the
 
 <br><br> <!-- NEW SECTION -->
 
+
+::: {style="text-align: center; font-size: 17px;"}
+## bird diversity in grassland vs forest ecosystems
+
+### class-level landscape metrics as predictors of avian species richness
+:::
+<div class="text2">
+For this analysis, completed as the final project for landscape ecology (ENVS 591) during the fall of 2023 at VCU, I was interested in exploring the extent to which class-level landscape metrics differ in their ability to explain variation in avian species richness (total \# of different species) in grassland ecosystems versus forest ecosystems.
+
+The whole project was carried out using **R** in RStudio, and was a great opportunity to conduct a spatial analysis outside of a point-and-click GIS environment. Not using ArcGIS Pro meant not enjoying the convenience of 'on-the-fly projection', which required me to be especially attentive to coordinate reference systems and projections as I prepared spatial data from different sources for analysis.
+I also became familiar with a number of great spatial R packages and APIs, including `mapview`, `terra`, `sf`, `raster`, `FedData`, and `landscapemetrics`.
+
+This project gave me a chance to work with data sets from the National Ecology Observatory Network (NEON), a comprehensive ecological monitoring program that collects standardized, high-quality data from diverse ecosystems across the United States.
+Check out the maps below - which I made in R using the `mapview` package - to see the NEON sites used in my analysis.
+
+```{r, warning=FALSE, message = FALSE, echo = FALSE}
+library(dplyr)
+
+source("other/le_script.R")
+
+# Bring together primary point layers for each study area
+plots <- rbind(bland_final, serc_final, smith_final,kona_final, konz_final, kans_final)
+
+
+
+plots <- plots %>%
+  mutate(studyarea = case_when(
+    grepl("KONA", substr(plotYear, 1, 4)) ~ "Konza Prairie Agroecosystem",
+    grepl("KONZ", substr(plotYear, 1, 4)) ~ "Konza Prairie Biological Station",
+    grepl("UKFS", substr(plotYear, 1, 4)) ~ "University of Kansas Field Station",
+    grepl("BLAN", substr(plotYear, 1, 4)) ~ "Blandy Experimental Forest",
+    grepl("SCBI", substr(plotYear, 1, 4)) ~ "Smithsonian Conservation Bio. Inst.",
+    grepl("SERC", substr(plotYear, 1, 4)) ~ "Smithsonian Experimental Research Center",
+    TRUE ~ NA
+  ))
+
+plots$studyarea <- as.factor(plots$studyarea) # Make factor for zcol=
+plots$studyarea <- factor(plots$studyarea, 
+                          as.character(unique(plots$studyarea)))
+
+
+plots.sf <- sf::st_as_sf(plots, crs = 4326, coords = c("decimalLongitude", "decimalLatitude"))
+
+labels_df <- data.frame(
+  studyarea = c("GRASSLAND SITES", "FOREST SITES"),
+  decimalLongitude = c(-96.49, -79),
+  decimalLatitude = c(40, 36.68)     
+)
+
+# Convert to sf object
+labels_sf <- sf::st_as_sf(labels_df, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
+
+# Create maps for each ecosystem type -- must reset the factor levels. This was easier than typing the entire study area name
+forest <- plots.sf[grepl("Bland|Smith", plots.sf$studyarea),]
+forest$studyarea <- as.character(forest$studyarea)
+forest$studyarea <- as.factor(forest$studyarea)
+grassland <- plots.sf[grepl("Konz|Kans", plots.sf$studyarea),]
+grassland$studyarea <- as.character(grassland$studyarea)
+grassland$studyarea <- as.factor(grassland$studyarea)
+```
+
+::: row
+::: col-md-6
+```{r, fig.height = 4, fig.width = 4, echo = FALSE}
+mapview::mapview(
+  forest, 
+  zcol = "studyarea", 
+  cex = 3.5,
+  layer.name = "Forest Study Sites", 
+  map.types = "CartoDB.Positron", 
+  col.regions = c("#ED6A5E", "#E9D985", "#007991")
+)
+```
+:::
+
+::: col-md-6
+```{r, fig.height = 4, fig.width = 4, echo= FALSE}
+
+mapview::mapview(
+  grassland, 
+  zcol = "studyarea", 
+  cex = 3.5,
+  layer.name = "Grassland Study Sites", 
+  map.types = "CartoDB.Positron",
+  col.regions = c("blue3", "salmon2", "aquamarine3")
+  )
+
+```
+:::
+:::
+
+<br>
+
+My analysis used three years of data (2019-2021) from three separate study areas in each of the two landscape types.
+Study areas comprised 10-20 distinct study plots, with each 'plot-year' combination representing a unique sampling event (n=228).
+For each plot-year combination, I calculated the total number of bird species observed.
+I pulled in National Land Cover Data using `FedData` and generated buffers around each plot-year at 200m, 500m, 1000m, and 2000m in order to assess the influence of landscape metrics at different spatial scales.
+
+Before calculating landscape metrics I first reclassified the NLCD data using a reclassification matrix to produce new raster datasets with simplified land cover categories (forest, agricultural, and urban).
+I then used the `landscapemetrics` package to calculate 5 class-level metrics for each buffer size:
+
+
+<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+  <figcaption style="text-align: center; font-size: .87em;">
+    <i>Data preprocessing R workflow</i>
+  </figcaption>
+  <img src="media/le_flow.png" style="border:1px solid #8896AB; width:675px;">
+</div>
+
+
+Five landscape metrics across four buffer sizes produced a total of 20 variables to be considered as potential predictors of species richness in each ecosystem type. Given time constraints, I took a bit of a shortcut to select variables for modelling. I utilized a tiered hierarchical approach by applying the `corSelect()` function from the `fuzzySim` package (v. 4.10.5). Minimally correlated variables were first selected at each spatial extent and those selected variables were then further evaluated together to make a final selection. The approach was pragmatic, but I would like to eventually return to this analysis and tailor variable selection by better integrating domain-specific ecological knowledge.
+
+With variables selected, I applied a generalized linear mixed model approach to incorporate *study* area as a random effect. This produced a 'singular fit', however, indicating that the model was overfitted -- that is, the random effects structure was too complex to be supported by the data. Instead, I utilized multiple regression to fit models for every possible combination of predictor variable, then compared models using AIC to select the top performers and identify the most important predictors. 
+
+<b>tl;dr version</b> 
+
+* In mid-Atlantic forests, only elevation and % forest cover were found to be significant predictors of avian species richness. 
+* In grasslands, both PLAND at 1000m and AI at 1000m were found to be significant predictors.
+* A significantly higher amount of variation in avian species richness was explained by grassland model (42.6%) than forest models (<12%).
+
+Here's a <b><a href="portfolio/le_final.pdf" taget="_blank">PDF version of a presentation</a></b> that gives a more detailed look at some of the results.
+</div>
+
+<br>
+<hr>
+
+<br><br> <!-- NEW SECTION -->
+
 ::: {style="text-align: center;"}
 ## gun data preprocessing automation
 :::
