@@ -35,28 +35,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<script src="site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
-<script src="site_libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
-<script src="site_libs/FlatGeoBuf-3.21.3/fgb.js"></script>
-<script src="site_libs/FlatGeoBuf-3.21.3/flatgeobuf-geojson.min.js"></script>
-<script src="site_libs/chromajs-2.1.0/chroma.min.js"></script>
-<link id="Forest_Study_Sites-1-attachment" rel="attachment" href="site_libs/Forest_Study_Sites-0.0.1/Forest_Study_Sites_layer.fgb"/>
-<link href="site_libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
-<script src="site_libs/HomeButton-0.0.1/home-button.js"></script>
-<script src="site_libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
-<script src="site_libs/clipboard-0.0.1/setClipboardText.js"></script>
-<link href="site_libs/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
-<link href="site_libs/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
-<link id="Grassland_Study_Sites-1-attachment" rel="attachment" href="site_libs/Grassland_Study_Sites-0.0.1/Grassland_Study_Sites_layer.fgb"/>
 <!-- custom_header.html -->
 
 <!-- fonts -->
@@ -447,7 +425,7 @@ of ArcGIS Pro, R, ArcGIS Online, and Python/ArcPy.
 <p><br></p>
 <div id="ebird-life-list-database" class="section level2"
 style="text-align: center; font-size: 17px;">
-<h2>eBird Life List Database</h2>
+<h2>eBird life list database</h2>
 <div
 id="leveraging-postgresql-and-postgis-for-geospatial-data-management"
 class="section level3">
@@ -461,33 +439,36 @@ management</h3>
          style="width:575px; 
                 box-shadow: -4px -4px 10px rgba(0,0,0,0.2);"> </a></p>
 </div>
-<p>This was a fun personal project in which I developed a spatial
-database from scratch using my eBird life list. The primary objectives
-were to practice creating a spatial database using PostgreSQL with
-PostGIS, and to implement this database on a server while developing a
-functional application for database interaction. I worked out the
-structure and schema using dbdiagram.io. Then I used the
-<code>RPostgres</code> and <code>DBI</code> packages to interact with
-the database and execute SQL commands witin the R environment. I used
-pgAdmin GUI for setting up an instance on Amazon Web Services RDS and
-executed the import of the .sql file via the command line. The whole
+<p>This was a fun personal project based around my eBird life list.
+While the project admittedly has an air of data navel-gazing, the real
+aim was to practice implementing a spatial database using PostgreSQL
+with PostGIS, host it on a server, and develop a functional application
+that interacts with the database. I worked out the database structure
+and schema using dbdiagram.io (see image above). I used R to prepare the
+data tables that would comprise the database, and utilized the
+<code>RPostgres</code> and <code>DBI</code> packages to execute SQL
+commands from directly within the R environment. I used pgAdmin GUI for
+setting up an instance on Amazon Web Services RDS, then executed the
+actual import of the database backup .sql file via the command line. The
 process was rewarding, as it tested my ability to integrate various
-software tools and platforms.</p>
-<p>In an effort to enrich the database and flesh out the tables I worked
-with some cool packages, including <code>rebird</code> (for accessing
-eBird data) and <code>openmeteo</code> (for weather data).
-<code>rebird</code> provides some great functionality, but there is no
-direct way to access individual eBird checklist attributes, some of
-which I needed. To work around this, I created a custom function to make
-an API call and return a given checklist’s attributes a a list object
-that could then be picked apart. Another challenge that required some
-creative problem solving was deriving spatial coordinates for
-observation locations that weren’t tied to recognized hotspots. I took a
-two-pronged approach, first leveraging regular expressions for
-extracting coordinates embedded in location names, and then relying on
-manual data entry for coordinates not available through programmatic
-means. The project is still ongoing, and when time permits I will work
-on building out a Shiny application to interact with database.</p>
+tools, methods, and platforms.</p>
+<p>To enrich the database and flesh out the tables with additional
+information, I worked with some cool packages. Specifically, I used
+<code>rebird</code> for accessing eBird data and <code>openmeteo</code>
+to pull in weather data. <code>rebird</code> provides some great
+functionality, but there is no direct way to access individual eBird
+checklist attributes, some of which I needed (e.g, time, outing
+duration, total number of species seen). To work around this, I created
+a custom function to make an API call and return a given checklist’s
+attributes as a list object that could then be picked apart. Another
+challenge that required some creative problem solving was deriving
+spatial coordinates for observation locations that weren’t tied to
+recognized hotspots. I took a two-pronged approach, first leveraging
+regular expressions for extracting coordinates embedded in location
+names, and then relying on manual data entry for coordinates not
+available through programmatic means. The project is still ongoing, and
+when time permits I will work on building out a Shiny application to
+interact with database.</p>
 <ul>
 <li><b><a href="portfolio/lifeListDatabase.html" target="blank">documentation
 for building and deploying the spatial database</a></b></li>
@@ -587,105 +568,6 @@ reflects model extent within existing USGS range polygon.</i></p>
 <p><br></p>
 <hr>
 <p><br><br> <!-- NEW SECTION --></p>
-<div id="bird-diversity-in-grassland-vs-forest-ecosystems"
-class="section level2" style="text-align: center; font-size: 17px;">
-<h2>bird diversity in grassland vs forest ecosystems</h2>
-<div
-id="class-level-landscape-metrics-as-predictors-of-avian-species-richness"
-class="section level3">
-<h3>class-level landscape metrics as predictors of avian species
-richness</h3>
-</div>
-</div>
-<div class="text2">
-<p>For this analysis, completed as the final project for landscape
-ecology (ENVS 591) during the fall of 2023 at VCU, I was interested in
-exploring the extent to which class-level landscape metrics differ in
-their ability to explain variation in avian species richness (total # of
-different species) in grassland ecosystems versus forest ecosystems.</p>
-<p>The whole project was carried out using <strong>R</strong> in
-RStudio, and was a great opportunity to conduct a spatial analysis
-outside of a point-and-click GIS environment. Not using ArcGIS Pro meant
-not enjoying the convenience of ‘on-the-fly projection’, which required
-me to be especially attentive to coordinate reference systems and
-projections as I prepared spatial data from different sources for
-analysis. I also became familiar with a number of great spatial R
-packages and APIs, including <code>mapview</code>, <code>terra</code>,
-<code>sf</code>, <code>raster</code>, <code>FedData</code>, and
-<code>landscapemetrics</code>.</p>
-<p>This project gave me a chance to work with data sets from the
-National Ecology Observatory Network (NEON), a comprehensive ecological
-monitoring program that collects standardized, high-quality data from
-diverse ecosystems across the United States. Check out the maps below -
-which I made in R using the <code>mapview</code> package - to see the
-NEON sites used in my analysis.</p>
-<div class="row">
-<div class="col-md-6">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-047ff945616dfc251e42" style="width:384px;height:384px;"></div>
-<script type="application/json" data-for="htmlwidget-047ff945616dfc251e42">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["point",440]},{"method":"addFlatGeoBuf","args":["Forest_Study_Sites","Forest Study Sites",null,true,"studyarea",{"radius":3.5,"stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":null,"fillOpacity":0.6},{"className":"","pane":"point"},"mapview-popup",{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}},null]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[-78.175704,38.865796,-76.524078,39.087919,true,"Forest Study Sites","Zoom to Forest Study Sites","<strong> Forest Study Sites <\/strong>","bottomright"]},{"method":"addLayersControl","args":["CartoDB.Positron","Forest Study Sites",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addLegend","args":[{"colors":["#ED6A5E","#E9D985","#007991"],"labels":["Blandy Experimental Forest","Smithsonian Conservation Bio. Inst.","Smithsonian Experimental Research Center"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"Forest Study Sites","extra":null,"layerId":null,"className":"info legend","group":"Forest Study Sites"}]}],"fitBounds":[38.865796,-78.175704,39.087919,-76.524078,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
-</div>
-<div class="col-md-6">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-5828c3d947dcf62da13e" style="width:384px;height:384px;"></div>
-<script type="application/json" data-for="htmlwidget-5828c3d947dcf62da13e">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["point",440]},{"method":"addFlatGeoBuf","args":["Grassland_Study_Sites","Grassland Study Sites",null,true,"studyarea",{"radius":3.5,"stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":null,"fillOpacity":0.6},{"className":"","pane":"point"},"mapview-popup",{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}},null]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[-96.647329,39.034674,-95.19004,39.227868,true,"Grassland Study Sites","Zoom to Grassland Study Sites","<strong> Grassland Study Sites <\/strong>","bottomright"]},{"method":"addLayersControl","args":["CartoDB.Positron","Grassland Study Sites",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addLegend","args":[{"colors":["#0000CD","#EE8262","#66CDAA"],"labels":["Konza Prairie Agroecosystem","Konza Prairie Biological Station","University of Kansas Field Station"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"Grassland Study Sites","extra":null,"layerId":null,"className":"info legend","group":"Grassland Study Sites"}]}],"fitBounds":[39.034674,-96.647329,39.227868,-95.19004,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
-</div>
-</div>
-<p><br></p>
-<p>My analysis used three years of data (2019-2021) from three separate
-study areas in each of the two landscape types. Study areas comprised
-10-20 distinct study plots, with each ‘plot-year’ combination
-representing a unique sampling event (n=228). For each plot-year
-combination, I calculated the total number of bird species observed. I
-pulled in National Land Cover Data using <code>FedData</code> and
-generated buffers around each plot-year at 200m, 500m, 1000m, and 2000m
-in order to assess the influence of landscape metrics at different
-spatial scales.</p>
-<p>Before calculating landscape metrics I first reclassified the NLCD
-data using a reclassification matrix to produce new raster datasets with
-simplified land cover categories (forest, agricultural, and urban). I
-then used the <code>landscapemetrics</code> package to calculate 5
-class-level metrics for each buffer size:</p>
-<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-<figcaption style="text-align: center; font-size: .87em;">
-<i>Data preprocessing R workflow</i>
-</figcaption>
-<p><img src="media/le_flow.png" style="border:1px solid #8896AB; width:675px;"></p>
-</div>
-<p>Five landscape metrics across four buffer sizes produced a total of
-20 variables to be considered as potential predictors of species
-richness in each ecosystem type. Given time constraints, I took a bit of
-a shortcut to select variables for modelling. I utilized a tiered
-hierarchical approach by applying the <code>corSelect()</code> function
-from the <code>fuzzySim</code> package (v. 4.10.5). Minimally correlated
-variables were first selected at each spatial extent and those selected
-variables were then further evaluated together to make a final
-selection. The approach was pragmatic, but I would like to eventually
-return to this analysis and tailor variable selection by better
-integrating domain-specific ecological knowledge.</p>
-<p>With variables selected, I applied a generalized linear mixed model
-approach to incorporate <em>study</em> area as a random effect. This
-produced a ‘singular fit’, however, indicating that the model was
-overfitted – that is, the random effects structure was too complex to be
-supported by the data. Instead, I utilized multiple regression to fit
-models for every possible combination of predictor variable, then
-compared models using AIC to select the top performers and identify the
-most important predictors.</p>
-<p><b>tl;dr version</b></p>
-<ul>
-<li>In mid-Atlantic forests, only elevation and % forest cover were
-found to be significant predictors of avian species richness.</li>
-<li>In grasslands, both PLAND at 1000m and AI at 1000m were found to be
-significant predictors.</li>
-<li>A significantly higher amount of variation in avian species richness
-was explained by grassland model (42.6%) than forest models
-(&lt;12%).</li>
-</ul>
-<p>Here’s a <b><a href="portfolio/le_final.pdf" taget="_blank">PDF
-version of a presentation</a></b> that gives a more detailed look at
-some of the results.</p>
-</div>
-<br>
-<hr>
-<p><br><br> <!-- NEW SECTION --></p>
 <div id="urban-tree-inventory" class="section level2"
 style="text-align: center;">
 <h2>urban tree inventory</h2>
@@ -718,22 +600,22 @@ utilizes Arcade expressions to cross-reference the table for a matching
 common name. It then automatically populates the fields ‘species’,
 ‘genus’, ‘functional group’, and ‘native’ within the app based on the
 retrieved data.</p>
-<p>This project gave me the opportunity to leverage Python &amp; ARcGIS
-PRo Notebooks automate some important data management processes. One
-Notebook assigns unique tree identifiers to each tree. Every new tree
-entry in the database is automatically assigned a Global ID, but for
-day-to-day operations and easier reference, this identifier is not
-practical. Something shorter and more intuitive was needed. So, instead
-of a 36 character alphanumeric ID, each tree is assigned a unique ID of
-the form ‘NNTREE-10`. I also developed a custom Python notebook to
-handle the renaming of fields in the returned i-Tree Eco output. The
+<p>This project gave me the opportunity to leverage Python with ArcGIS
+PPo Notebooks in order to automate some important data management
+processes. One Notebook assigns unique tree identifiers to each tree.
+Every new tree entry in the database is automatically assigned a Global
+ID, but for day-to-day operations and easier reference, this identifier
+is not practical. Something shorter and more intuitive was needed. So,
+instead of a 36 character alphanumeric ID, each tree is assigned a
+unique ID of the form, e.g., ’NNTREE-10`. I created another Notebook to
+handle the renaming of fields in the data set returned by i-Tree. The
 process of getting ecosystem services and benefits calculated by i-Tree
 involves importing your collected field data and sending it off to the
-i-Tree Eco web application. The data is then processed and returned as a
-CSV file. Unfortunately, the returned field names are not consistent
-with database best practices (e.g., ’Carbon Storage ($)’).The Notebook
-script ensures that these fieldnames are renamed in accordance with the
-established tree database schema.</p>
+i-Tree web application. The data is then processed and returned as a CSV
+file. Unfortunately, the returned field names are not consistent with
+database best practices (e.g., they contain spaces and special
+characters).The Notebook script ensures that these field names are
+renamed in accordance with the established tree database schema.</p>
 <p>The tree inventory project is still in its nascent stage, and as a
 result the application I built is not publicly available. But you can
 see a short video demo of the application below.</p>
