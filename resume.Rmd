@@ -165,7 +165,7 @@ May 2024 - May 2023
 ::: concise
 - Analyst intern with City of NN GIS team
 - Programmatic scripting to streamline GIS data preparation and analysis 
-- Developed web map application for Newport News Green foundation as part of their website redesign
+- Developed Experience Builder web application for Newport News Green foundation as part of their website redesign
 - Assisted colleagues by automating data preparation and analysis tasks
 - Collaborated with cross-functional teams on data accuracy and GIS problem-solving
 :::
