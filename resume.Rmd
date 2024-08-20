@@ -131,7 +131,7 @@ Main
 Andrew <b>Cameron</b> {#title}
 --------------------------------------------------------------------------------
 
-I’m a former teacher with over a decade of professional experience in education who made a pivot to the world of environmental GIS and data analysis, and I haven’t looked back since. Bilingual, skilled in GIS, data analysis, and problem solving, and ready to make an impact.
+I’m a former Spanish teacher with over a decade of professional experience in education who made a pivot to the world of environmental GIS and data analysis, and I haven’t looked back since. Bilingual, skilled in GIS, data analysis, and problem solving, and ready to make an impact.
 
 
 Experience {data-icon=suitcase}
@@ -151,7 +151,7 @@ present - Jan 2024
 - GIS data sourcing and acquisition
 - GIS data innovation and spatial analysis
 - Developed spatial web application to communicate findings and engage stakeholders
-- Developed Survey123 form for field data collection and model validation
+- Project led site ground truthing and data collection
 :::
 
 ### GIS Analyst
@@ -170,7 +170,7 @@ May 2024 - May 2023
 - Collaborated with cross-functional teams on data accuracy and GIS problem-solving
 :::
 
-### Environmental Data Research Assistant
+### Environmental Data Analyst
 
 Virginia Commonwealth Univ.
 
@@ -181,8 +181,8 @@ present - Dec 2023
 ::: concise
 - Optimizing R scripts for environmental data processing
 - Implementing statistical models for environmental data analysis
-- Producing dynamic, publication-ready visualizations with ggplot2 and gganimate
-- Supported research through technical R expertise
+- Producing dynamic, publication-ready data visualizations and maps
+- Supporting research through technical R expertise
 :::
 
 
@@ -291,6 +291,17 @@ Apr 2023
 
 Presentations {data-icon=comment}
 --------------------------------------------------------------------------------
+### Optimizing Site Selection for (Sub)Urban Agriculture: How Geospatial Analysis Was Applied to Balance Equity, Sustainability, and Longevity in Richmond City, VA
+
+APA Virginia Conference
+
+Williamsburg, VA
+
+::: small-text
+- Co-presenter with Dr. John Jones.
+:::
+
+Jul 2024
 
 ### "Using Urban Land Evaluation and Site Assessment (uLESA) to Identify Ideal Locations for Urban Agriculture"
 
@@ -321,15 +332,17 @@ Apr 2023
 Publications {data-icon=magazine}
 --------------------------------------------------------------------------------
 
-### "Mapping a greener future: how GIS enhances urban agriculture initiatives" (forthcoming)
+### "Mapping a greener future: how GIS enhances urban agriculture initiatives"
 
 Urban Agriculture Magazine
 
 Frome, England 
 
 ::: small-text
-- This article uses Richmond, Virginia, as a case study to highlight how GIS technology can enhance urban agriculture initiatives by optimizing site selection and supporting sustainable, equitable project planning.
+-  Cameron, A., Jones, J. C., Thomas, L., & Hastings, E. (2024). Mapping a greener future: how GIS enhances urban agriculture initiatives. Urban Agriculture Magazine no. 41 – Linking future policies and next practices, 41, 36-39.  https://ruaf.org/document/urban-agriculture-magazine-no-41-linking-future-policies-and-next-practices/
+
+
 :::
 
-July 2024
+Jul 2024
 
