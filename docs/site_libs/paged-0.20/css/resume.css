@@ -13,12 +13,12 @@
   --margin-left: 0.25in;
   --content-width: calc(var(--page-width) - var(--margin-right) - var(--margin-left));
   --root-font-size: 12pt;
-  --sidebar-width: 15rem;
+  --sidebar-width: 13rem;
   --sidebar-background-color: #f2f2f2;
   --main-width: calc(var(--content-width) - var(--sidebar-width));
   --decorator-horizontal-margin: 0.2in;
 
-  --sidebar-horizontal-padding: 0.2in;
+  --sidebar-horizontal-padding: 0.25in;
 
   /* XXX: using px for very good precision control */
   --decorator-outer-offset-top: 10px;
@@ -94,7 +94,7 @@ img{
 
 .aside{
   width: var(--sidebar-width);
-  padding: 0.6in var(--sidebar-horizontal-padding);
+  padding: 0.1in var(--sidebar-horizontal-padding);
   font-size: 0.8rem;
   float: right;
   position: absolute;
@@ -347,12 +347,12 @@ h1, h2{
 /* sidebar */
 
 .aside h2{
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-weight: 450;
+  font-size: 1.0rem;
 }
 
 .aside .level2{
-  margin-top: 0.5in;
+  margin-top: 0.4in;
 }
 
 #contact ul{
@@ -363,7 +363,7 @@ h1, h2{
 }
 
 #contact li > i{
-  width: 0.9rem; /* for text alignment */
+  width: 0.5rem; /* for text alignment */
   text-align: right;
 }
 
