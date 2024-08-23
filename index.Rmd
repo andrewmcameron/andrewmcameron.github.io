@@ -62,7 +62,7 @@ h2 {
  
  <br>
 
-## geospatial analyst | data wrangling & management | R enthusiast
+## geospatial | data | R enthusiast
 <hr>
 
 <div class="text">
