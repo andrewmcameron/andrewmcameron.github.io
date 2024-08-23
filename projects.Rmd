@@ -70,15 +70,16 @@ Below are various projects, both professional and academic, that highlight in on
 
 ::: {style="text-align: center;"}
 ## "mapping a greener future"
+:::
 
 <div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
-<a href="media/webapp_demo.gif" target="blank"><img src="media/reservoirAnalysisMap.jpg" alt="VA watersheds and trend analysis sites" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a>
+<a href="media/webapp_demo.gif" target="blank"><img src="media/webapp_demo.gif" alt="VA watersheds and trend analysis sites" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a>
 </div>
 
 I'm pleased to say that a brief article I was the lead author on has been published in <i>Urban Agriculture Magazine</i>, a publication of the <a href="https://www.ruaf.org/" target="_blank">Resource Centres on Urban Agriculture and Food Security</a>. The article, titled "Mapping a greener future: how GIS enhances urban agriculture initiatives", appears in issue no. 41, released in July of 2024. The article is a summary of the work I am a part of as a member of the Urban Land and Site Assessment (uLESA) research team at VCU that is working to enhance empiricism and intentional planning around site selection for urban agriculture initiatives. The article discusses the critical role of GIS in identifying optimal locations for in-ground urban agriculture projects, the development of web applications for decision-making, and the importance of social equity and sustainability in these initiatives. 
 
 The above gif is a quick demo of the application I developed using ArcGIS Experience Builder as a deliverable for the Richmond uLESA project. The app allows users to explore the city of Richmond, VA in conjunction with various data layers, including the Richmond uLESA model output, which highlights optimal sites for urban agriculture based on a number of geographic, environmental, and social equity-focused variables, the city's parcel layer, existing community gardens, neighborhood boundaries, and council districts. 
-:::
+
 
 - <b><a href="portfolio/urban-agriculture-magazine-41.pdf" target="blank">pdf of Urban Agriculture Magazine no. 41</a></b>
 
