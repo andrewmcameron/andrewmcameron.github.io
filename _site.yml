@@ -3,10 +3,8 @@ navbar:
   left:
     - text: "home"
       href: index.html
-    - text: "geospatial"
-      href: geospatial.html
-    - text: "coding & analysis"
-      href: coding.html
+    - text: "projects"
+      href: projects.html
     - text: "resume"
       href: CV.pdf
       target: "_blank"
