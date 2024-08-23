@@ -132,6 +132,7 @@ The whole project was carried out using **R** in RStudio, and was a great opport
 I also became familiar with a number of great spatial R packages and APIs, including `mapview`, `terra`, `sf`, `raster`, `FedData`, and `landscapemetrics`.
 
 This project gave me a chance to work with data sets from the National Ecology Observatory Network (NEON), a comprehensive ecological monitoring program that collects standardized, high-quality data from diverse ecosystems across the United States.
+
 Check out the maps below - which I made in R using the `mapview` package - to see the NEON sites used in my analysis.
 
 ```{r, warning=FALSE, message = FALSE, echo = FALSE}
@@ -214,7 +215,7 @@ mapview::mapview(
 
 My analysis used three years of data (2019-2021) from three separate study areas in each of the two landscape types.
 Study areas comprised 10-20 distinct study plots, with each 'plot-year' combination representing a unique sampling event (n=228).
-For each plot-year combination, I calculated the total number of bird species observed.
+For each plot-year, I derived the total number of bird species observed.
 I pulled in National Land Cover Data using `FedData` and generated buffers around each plot-year at 200m, 500m, 1000m, and 2000m in order to assess the influence of landscape metrics at different spatial scales.
 
 Before calculating landscape metrics I first reclassified the NLCD data using a reclassification matrix to produce new raster datasets with simplified land cover categories (forest, agricultural, and urban).
