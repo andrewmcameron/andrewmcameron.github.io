@@ -63,7 +63,7 @@ h3 {
 ```
 
 <hr>
-Below are various projects, both professional and academic, that highlight in one way or another my skills in geospatial and data analysis, coding, research, and writing. As you may notice, I make heavy use of R in most, if not all, of my projects and workflows. It's an incredibly powerful tool!
+Below are a variety of projects—spanning professional, academic, and personal work—that reflect my skills in geospatial and data analysis, coding, research, and writing. 
 <hr>
 
 <br>
