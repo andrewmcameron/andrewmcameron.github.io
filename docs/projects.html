@@ -13,7 +13,7 @@
 
 <title>projects</title>
 
-<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -484,25 +484,25 @@ class="section level2" style="text-align: center;">
 <h2>climate change effects on Virginia reservoirs</h2>
 </div>
 <div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
-<p><a href="media/animatedplot.gif" target="blank"><img src="media/reservoirAnalysisMap.jpg" alt="VA watersheds and trend analysis sites" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a></p>
+<p><a href="media/reservoirAnalysisMap.jpg" target="blank"><img src="media/reservoirAnalysisMap.jpg" alt="VA watersheds and trend analysis sites" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a></p>
 </div>
-<p>My most recent project for the Bukaveckas Lab at VCU involved
-analyzing the effects of climate change on Virginia reservoirs. Between
-February and July of 2024 I contributed to a forthcoming peer-reviewed
-publication that examines the effects of climate change on reservoirs
-throughout Virginia. This involved carrying out median-based linear
-modeling (MBLM) to assess long-term trends in temperature and dissolved
-oxygen at 41 lake stations across the state. MBLM was selected for its
-robustness to outliers, which ensured more reliable results in the
-presence of irregular data points, occurring either as a result of
-extreme weather conditions or instrument error. The analysis was based
-on a large data set from Virginia Department of Environmental Quality
-comprising ~19,00 profiles from over 500 stations across more than 100
-reservoirs in the state. The stations selected for the study were chosen
-based on their having at least 100 profiles available for analysis. For
-each station, month-by-month trends from May to October were calculated,
-along with intra-annual trends focusing on the period from April to
-August each year.</p>
+<p>I recently finished up a project with the Bukaveckas Lab at VCU that
+involved analyzing long-term water temperature and dissolved oxygen
+trends in Virginia reservoirs to assess the effects of climate change.
+Between February and July of 2024 I contributed to a forthcoming
+peer-reviewed publication that examines the effects of climate change on
+reservoirs throughout Virginia. This involved carrying out median-based
+linear modeling (MBLM) to assess trends at 41 lake stations across the
+state. MBLM was selected for its robustness to outliers, which ensured
+more reliable results in the presence of irregular data points,
+occurring either as a result of extreme weather conditions or instrument
+error. The analysis was based on a large data set from Virginia
+Department of Environmental Quality comprising ~19,00 profiles from over
+500 stations across more than 100 reservoirs in the state. The stations
+selected for the study were chosen based on their having at least 100
+profiles available for analysis. For each station, I derived
+month-by-month trends from May to October, along with intra-annual
+trends focusing on the period from April to August of each year.</p>
 <p>I really enjoyed this project, not only because it gave me a chance
 to learn about and apply a new statistical method in the context of
 valuable climate-focused research, but because it presented me with some
@@ -514,11 +514,11 @@ explain variability in the data. I had a rewarding - if rather
 challenging - experience trying to create a plot, using our data, based
 on a figure from another publication. This involved some pretty advanced
 <code>ggplot2</code> concepts to achieve the desired formatting and
-layout. Plus, I got to make a cool map (!) for publication that shows
-the locations of the trend analysis sites and the watersheds they are
-located in. This gave me a chance to try to develop a compelling color
-scheme and layout that was be both visually appealing and
-informative.</p>
+layout. Plus, I got to make a cool map, for use in the forthcoming
+publication, that shows the locations of the trend analysis sites and
+the watersheds they are located in. This gave me a chance to try to put
+togethre a compelling color scheme and layout that was be both visually
+appealing and informative.</p>
 <p>All in all, this project is built on quite a few Markdown files.
 Below are a couple of examples.</p>
 <ul>
@@ -703,22 +703,22 @@ Eco</a> workflow for calculating ecosystem benefits, and developing an
 application using Experience Builder that could be used to explore the
 city’s trees and interact with the collected data.</p>
 <p>In addition to the main ‘Trees’ point layer, I incorporated a
-functionally related reference table into the ‘City Trees’ feature
-class. When a user selects a common name in the Field Maps app, the app
+functionally related reference table into the ‘City Trees’ feature layer
+When a user selects a common name in the Field Maps app, the app
 utilizes Arcade expressions to cross-reference the table for a matching
 common name. It then automatically populates the fields ‘species’,
 ‘genus’, ‘functional group’, and ‘native’ within the app based on the
 retrieved data.</p>
-<p>This project gave me the opportunity to leverage Python using Jupyter
-Notebooks in ArcGIS Pro in order to automate some important data
-management processes. One notebook assigns unique tree identifiers to
-each tree. Every new tree entry in the database is automatically
-assigned a Global ID, but for day-to-day operations and easier
-reference, this identifier is not practical. Something shorter and more
-intuitive was needed. So, instead of a 36 character alphanumeric ID,
-each tree is assigned a unique ID of the form, e.g., ’NNTREE-10`. I
-created another Notebook to handle the renaming of fields in the data
-set returned by i-Tree. The process of getting ecosystem services and
+<p>I was able to to leverage Python using Jupyter Notebooks in ArcGIS
+Pro in order to automate some important data management processes. One
+notebook assigns unique tree identifiers to each tree. By default, every
+new tree entry in the database is automatically assigned a long,
+alphanumeric Global ID. For day-to-day operations and easy reference,
+this identifier is not practical. Something shorter and more intuitive
+was needed. So, instead of a 36 character alphanumeric string, each tree
+is assigned a unique ID of the form, e.g., ’NNTREE-10`. I created
+another Notebook to handle the renaming of fields in the data set
+returned by i-Tree. The process of getting ecosystem services and
 benefits calculated by i-Tree involves importing your collected field
 data and sending it off to the i-Tree web application. The data is then
 processed and returned as a CSV file. Unfortunately, the returned field
@@ -744,15 +744,15 @@ style="text-align: center;">
 <div style="text-align: center; margin-top: 20px; margin-bottom: 15px;">
 <p><a href="media/animatedplot.gif" target="blank"><img src="media/animatedplot.gif" alt="model predictive success" width="650" style="box-shadow: -3px -3px 10px rgba(0,0,0,0.2);"></a></p>
 </div>
-<p>Another fun and challenging project I was able to do for the
-Bukaveckas Lab involved combining 15 years of water quality monitoring
-data to generate daily mean summary statistics for select variables, as
-well as produce an animated plot depicting seasonal patterns and
-inter-annual variation in water temperature at VCU’s Rice River Center
-monitoring station.</p>
-<p>This required quite a bit of wrangling and problem solving to get
-from A to B. I made extensive use of nested list structures to organize
-and manage the data, which allowed me to systematically separate and
+<p>In the Spring of 2024 I was asked to see if I could create a dynamic,
+animated visualization to depict seasonal patterns and inter-annual
+variation in water temperature at VCU’s Rice River Center monitoring
+station on the James River.</p>
+<p>This involved first combining 15 years of water quality monitoring
+data to generate daily mean summary statistics for select variables.
+Quite a bit of wrangling and problem solving were required to get from A
+to B. I made extensive use of nested list structures to organize and
+manage the data, which allowed me to systematically separate and
 categorize data by year and tab across and within Excel workbook files.
 This was critical given the inconsistency in the data schema and
 variable naming conventions over the 15 years that data were
